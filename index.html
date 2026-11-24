@@ -306,49 +306,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-      // === MUSIK - FIXED ===
-      const bgMusic = document.getElementById('bg-music');
-      const musicBtn = document.getElementById('music-toggle');
-      const musicLabel = document.getElementById('music-label');
-      const openBtn = document.getElementById('btn-buka-undangan');
-      let musicIsPlaying = false;
-
-      function updateLabel() {
-        if (musicLabel) musicLabel.textContent = musicIsPlaying ? 'Musik: ON' : 'Musik: OFF';
-      }
-
-      function playMusic() {
-        if (!bgMusic) return;
-        bgMusic.volume = 0.7;
-        const p = bgMusic.play();
-        if (p !== undefined) {
-          p.then(() => { musicIsPlaying = true; updateLabel(); })
-           .catch(() => { musicIsPlaying = false; updateLabel(); });
-        }
-      }
-
-      function pauseMusic() {
-        if (!bgMusic) return;
-        bgMusic.pause();
-        musicIsPlaying = false;
-        updateLabel();
-      }
-
-      if (musicBtn) {
-        musicBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (musicIsPlaying) pauseMusic();
-          else playMusic();
-        });
-      }
-
-      if (openBtn) {
-        openBtn.addEventListener('click', () => {
-          // Kasih jeda dikit biar amplop kebuka dulu baru musik jalan
-          setTimeout(playMusic, 300);
-        });
-      }
-    </script>
 </body>
 </html>
