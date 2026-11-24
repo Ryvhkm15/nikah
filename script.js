@@ -14,10 +14,8 @@ const CONFIG = {
 
     tanggalTeks: "Sabtu, 27 Maret 2027",
     jamAcara: "Pukul 19.00 WIB - 21.00 WIB",
-    // Wajib pakai nama bulan bahasa Inggris: "Month DD, YYYY HH:MM:SS"
     tanggalCountdown: "March 27, 2027 19:00:00",
 
-    // Save The Date & Detail Akad / Resepsi
     stdBulan: "MARET",
     stdTanggal: "27",
     stdTahun: "2027",
@@ -33,7 +31,6 @@ const CONFIG = {
     linkMaps: "https://maps.app.goo.gl/vtc6LVVJoQGudwiw7",
     urlMusik: "marry-your-daughter.mp3",
 
-    // Wedding Gift (Rekening / E-Wallet & Kado Fisik)
     rek1Nomor: "1122334455",
     rek1Bank: "BCA",
     rek1Nama: "a.n Herlangga Aprilyansah",
@@ -103,7 +100,6 @@ if (linkMapsEl) linkMapsEl.href = CONFIG.linkMaps;
 const linkMapsDetailEl = document.getElementById("display-link-maps-detail");
 if (linkMapsDetailEl) linkMapsDetailEl.href = CONFIG.linkMaps;
 
-// Nama tamu dari URL: ?to=Bapak+Ahmad
 const urlParams = new URLSearchParams(window.location.search);
 const tamu = urlParams.get("to");
 if (tamu) {
@@ -130,7 +126,7 @@ if (petalsContainer) {
 }
 
 // ==========================================
-// ANIMASI SCROLL REVEAL (MUNCUL SAAT DI-SCROLL)
+// ANIMASI SCROLL REVEAL
 // ==========================================
 const revealElements = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
@@ -308,7 +304,6 @@ function simpanUcapan(items) {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     } catch {
-        // Abaikan jika penyimpanan lokal dibatasi browser
     }
 }
 
