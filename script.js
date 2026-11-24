@@ -31,7 +31,7 @@ const CONFIG = {
     detailLokasiUpper: "YAYASAN DARUL AITAMA",
     detailAlamatLines: "Jl. K.H. Mas Mansyur No.47, Kb. Melati,\nKec. Tanah Abang, Kota Jakarta Pusat,\nDaerah Khusus Ibukota Jakarta 10230",
     linkMaps: "https://maps.app.goo.gl/vtc6LVVJoQGudwiw7",
-    urlMusik: "audio/marry-your-daughter.mp3",
+    urlMusik: "marry-your-daughter.mp3",
 
     // Wedding Gift (Rekening / E-Wallet & Kado Fisik)
     rek1Nomor: "1122334455",
