@@ -1,7 +1,5 @@
 const tamu = new URLSearchParams(location.search).get("to");
 if (tamu) document.getElementById("nama-tamu").textContent = tamu;
-
-// Kelopak jatuh
 const box = document.getElementById("petals");
 if (box) {
   const e = ["🌸","🌺","🌷","✨"];
@@ -16,13 +14,10 @@ if (box) {
     box.appendChild(s);
   }
 }
-
-// Musik ON/OFF
 const audio = document.getElementById("bg-music");
 const playBtn = document.getElementById("music-toggle");
 const buka = document.getElementById("btn-buka");
 const env = document.getElementById("envelope");
-
 async function toggleMusic(force) {
   try {
     if (force || audio.paused) {
@@ -35,21 +30,15 @@ async function toggleMusic(force) {
   } catch (e) {}
 }
 if (playBtn) playBtn.onclick = () => toggleMusic(false);
-
-// KLIK AMPLOP - LANGSUNG TURUN, GAK NUNGGU MUSIK
 if (buka) buka.onclick = () => {
   env.classList.add("open");
   toggleMusic(true);
-  // Paksa ayat langsung animasi
   const ayat = document.getElementById("ayat");
   if (ayat) ayat.classList.add("show");
-  // Langsung scroll turun setelah 350ms, pas flap kebuka
   setTimeout(() => {
     ayat.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 350);
 };
-
-// Countdown
 const target = new Date("March 27, 2027 19:00:00").getTime();
 function upd() {
   const d = Math.max(0, target - Date.now());
@@ -60,8 +49,6 @@ function upd() {
 }
 upd();
 setInterval(upd, 1000);
-
-// Copy
 document.querySelectorAll(".copy-btn").forEach(b => {
   b.onclick = async () => {
     const t = document.getElementById(b.dataset.target).textContent.trim();
@@ -79,8 +66,6 @@ document.querySelectorAll(".copy-btn").forEach(b => {
     setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1800);
   };
 });
-
-// RSVP
 const form = document.getElementById("rsvp-form");
 const list = document.getElementById("daftar-ucapan");
 const KEY = "rsvp-herlangga-zalsa";
@@ -111,8 +96,6 @@ form.onsubmit = e => {
   render();
 };
 render();
-
-// ANIMASI PER-SECTION - DIBIKIN LEBIH PEKA
 const reveals = document.querySelectorAll(".reveal");
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(en => {
