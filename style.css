@@ -2,21 +2,21 @@
 body{font-family:"Plus Jakarta Sans",sans-serif;background:#0a1f16;color:#231b18;line-height:1.65;overflow-x:hidden}
 img{display:block;width:100%;height:100%;object-fit:cover}
 
-/* ===== ANIMASI PER-SECTION - YANG BIKIN KELIATAN HIDUP, BUKAN LOADING POLOS ===== */
-/* Bedanya sama yang kemarin: sekarang ada blur + naik + scale, jadi keliatan animasi, bukan kosong */
+/* ===== ANIMASI PER-SECTION ===== */
 .anim-in{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) both}
 .anim-in.d1{animation-delay:.25s}
-.reveal{opacity:0;transform:translateY(36px) scale(.98);filter:blur(6px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s}
-.reveal.show{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+.reveal{opacity:0;transform:translateY(36px) scale(.98);filter:blur(6px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1),filter 1s}
+.reveal.show{opacity:1;transform:translateY(0) scale(1);filter:blur(0);animation:popIn .9s cubic-bezier(.22,1,.36,1)}
 .reveal-item{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;transition-delay:.15s}
 .reveal.show .reveal-item{opacity:1;transform:translateY(0)}
 .reveal.show .reveal-item:nth-child(2){transition-delay:.25s}
 .reveal.show .reveal-item:nth-child(3){transition-delay:.35s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px) scale(.98);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes popIn{0%{transform:translateY(40px) scale(.96)}60%{transform:translateY(-4px) scale(1.01)}100%{transform:translateY(0) scale(1)}}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
 
-/* COVER */
+/* ===== COVER - TIRAI BELUDRU HIJAU ===== */
 .cover{position:relative;min-height:100svh;padding:28px 16px 30px;text-align:center;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 50% 30%,rgba(255,255,255,.08),transparent 55%),repeating-linear-gradient(100deg,#0d2a1d 0 38px,#081c12 38px 76px,#123324 76px 110px,#071a10 110px 145px),radial-gradient(circle at 50% 28%,#154e35,#092b1c 60%,#04170f)}
 .cover::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 40%,rgba(0,0,0,.45));pointer-events:none}
 .cover-text{position:relative;z-index:3}
@@ -40,10 +40,10 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .envelope.open .wax{opacity:0}
 .click-hint{display:block;margin-top:14px;font-size:11px;letter-spacing:.22em;color:#f4ead5}
 
-/* MUSIK ON/OFF */
+/* ===== TOMBOL MUSIK ON/OFF ===== */
 .music-btn{position:fixed;right:18px;bottom:18px;z-index:99;background:#0c2b1e;color:#fffaf0;border:1px solid #d9be8c;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.3)}
 
-/* AYAT */
+/* ===== AYAT OVAL RENDA ===== */
 .ayat-sec{padding:60px 16px 70px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.06),transparent 50%),repeating-linear-gradient(115deg,#0a2a1c 0 30px,#071d12 30px 60px),#0a1f16}
 .ayat-wrap{position:relative;max-width:520px;margin:0 auto}
 .floral-ayat{position:absolute;left:-4px;top:-14px;font-size:28px;z-index:5;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
@@ -56,7 +56,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .tassel{width:12px;height:44px;background:#6b1122;margin:-2px auto 0;border-radius:0 0 8px 8px}
 .env-pocket{max-width:420px;height:90px;background:linear-gradient(180deg,#f3ead6,#efe6d5);border:1px solid rgba(185,156,107,.4);border-radius:10px;margin:-12px auto 0;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 12px 24px rgba(0,0,0,.35)}
 
-/* MEMPELAI */
+/* ===== MEMPELAI MARUN BELUDRU ===== */
 .mempelai-sec{background:radial-gradient(circle at top,#5a111f,#2a060d);padding:60px 16px;text-align:center;color:#fff}
 .bismillah{font-family:"Cormorant Garamond",serif;font-size:30px;color:#d9be8c}
 .intro{font-family:"Cormorant Garamond",serif;font-size:18px;margin:14px 0 36px}
@@ -67,7 +67,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .name-s{font-family:"Great Vibes",cursive;font-size:36px;color:#d9be8c;line-height:1.1}
 .amp{font-family:"Great Vibes",cursive;font-size:44px;color:#d9be8c}
 
-/* SAVE DATE */
+/* ===== SAVE THE DATE HIJAU BELUDRU ===== */
 .std-sec{background:linear-gradient(180deg,#33492f,#2b3e2b 40%,#22321f);color:#fff;padding:50px 16px;text-align:center;position:relative}
 .floral-std{position:absolute;right:10px;top:10px;font-size:22px}
 .std-title{font-family:"Great Vibes",cursive;font-size:62px;line-height:.9}
@@ -85,14 +85,14 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .flower-line{margin:20px 0}
 .btn-maroon{display:inline-block;margin-top:14px;background:#470c17;color:#fff;padding:9px 22px;border-radius:6px;text-decoration:none;font-size:13px}
 
-/* COUNTDOWN */
+/* ===== COUNTDOWN ===== */
 .count-sec{background:#f6f1e7;padding:50px 16px;text-align:center}
 .count-sec h2{font-family:"Cormorant Garamond",serif;font-size:30px;color:#4e0d19}
 .countdown{display:flex;gap:12px;justify-content:center;margin-top:20px}
 .countdown div{background:#fff;border:1px solid #e4d7be;border-radius:12px;padding:14px;min-width:72px}
 .countdown span{display:block;font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;color:#4e0d19}
 
-/* GIFT */
+/* ===== WEDDING GIFT MARUN ===== */
 .gift-sec{background:#470c17;color:#fff;padding:50px 16px;text-align:center}
 .gift-title{font-family:"Great Vibes",cursive;font-size:54px}
 .gift-icon{font-size:44px;margin:10px 0}
@@ -104,13 +104,13 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .wa-box span{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:10px 18px;font-size:13px}
 .gift-addr{font-size:13px;opacity:.9}
 
-/* LOVE STORY */
+/* ===== LOVE STORY ===== */
 .love-sec{background:#2b3e2b;color:#fff;padding:50px 16px}
 .love-title{font-family:"Great Vibes",cursive;font-size:52px;text-align:center;margin-bottom:20px}
 .story{max-width:520px;margin:0 auto 22px}
 .story h3{font-family:"Great Vibes",cursive;font-size:30px}
 
-/* GALLERY LAMA */
+/* ===== GALLERY LAMA - 3 FOTO KLASIK ===== */
 .gallery-sec{background:#fbf8f2;padding:84px 20px;text-align:center}
 .gallery-classic-inner{max-width:960px;margin:0 auto}
 .gallery-classic-title{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;color:#4e0d19;margin-bottom:6px}
@@ -120,7 +120,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .gallery-frame:hover{transform:translateY(-4px)}
 .gallery-frame img{height:265px;object-fit:cover}
 
-/* PENUTUP */
+/* ===== PENUTUP OVAL MARUN ===== */
 .closing-sec{background:#0a1f16;padding:50px 16px;text-align:center}
 .closing-floral{font-size:22px;margin-bottom:-10px}
 .closing-oval{position:relative;max-width:420px;margin:0 auto;background:#480b16;border:2px solid rgba(217,190,140,.6);border-radius:120px 120px 14px 14px;padding:40px 22px 50px;color:#fff}
@@ -132,7 +132,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .closing-flap{position:absolute;inset:0;background:#e4d8c3;clip-path:polygon(0 0,100% 0,50% 78%)}
 .closing-floral-br{position:absolute;right:8px;bottom:6px;font-size:22px;z-index:2}
 
-/* RSVP */
+/* ===== RSVP ===== */
 .rsvp-sec{background:#f5f0e6;padding:60px 16px;text-align:center}
 .rsvp-sec h2{font-family:"Cormorant Garamond",serif;font-size:32px;color:#7d623b}
 .rsvp-sec form{max-width:520px;margin:20px auto;background:#fff;padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:12px}
