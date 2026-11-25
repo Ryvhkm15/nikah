@@ -25,8 +25,8 @@
         radial-gradient(circle at 86% 74%, rgba(24, 112, 74, 0.48) 0%, transparent 52%),
         repeating-linear-gradient(
             135deg,
-            rgba(217, 190, 140, 0.03) 0px,
-            rgba(217, 190, 140, 0.03) 1px,
+            rgba(217, 190, 140, 0.035) 0px,
+            rgba(217, 190, 140, 0.035) 1px,
             transparent 1px,
             transparent 18px
         ),
@@ -37,15 +37,15 @@
         radial-gradient(circle at 12% 88%, rgba(78, 13, 25, 0.28) 0%, transparent 48%),
         repeating-linear-gradient(
             45deg,
-            rgba(217, 190, 140, 0.035) 0px,
-            rgba(217, 190, 140, 0.035) 2px,
+            rgba(217, 190, 140, 0.04) 0px,
+            rgba(217, 190, 140, 0.04) 2px,
             transparent 2px,
             transparent 16px
         ),
         repeating-linear-gradient(
             -45deg,
-            rgba(255, 255, 255, 0.02) 0px,
-            rgba(255, 255, 255, 0.02) 2px,
+            rgba(255, 255, 255, 0.022) 0px,
+            rgba(255, 255, 255, 0.022) 2px,
             transparent 2px,
             transparent 16px
         ),
@@ -57,8 +57,8 @@
         radial-gradient(circle at 18% 82%, rgba(158, 25, 52, 0.48) 0%, transparent 52%),
         repeating-radial-gradient(
             circle at 50% 50%,
-            rgba(255, 232, 188, 0.032) 0px,
-            rgba(255, 232, 188, 0.032) 2px,
+            rgba(255, 232, 188, 0.035) 0px,
+            rgba(255, 232, 188, 0.035) 2px,
             transparent 2px,
             transparent 20px
         ),
@@ -69,8 +69,8 @@
         radial-gradient(circle at 88% 84%, rgba(13, 59, 40, 0.12) 0%, transparent 48%),
         repeating-linear-gradient(
             -45deg,
-            rgba(183, 148, 88, 0.045) 0px,
-            rgba(183, 148, 88, 0.045) 1px,
+            rgba(183, 148, 88, 0.05) 0px,
+            rgba(183, 148, 88, 0.05) 1px,
             transparent 1px,
             transparent 16px
         ),
@@ -82,8 +82,8 @@
         radial-gradient(circle at 88% 72%, rgba(217, 190, 140, 0.14) 0%, transparent 42%),
         repeating-linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.022) 0px,
-            rgba(255, 255, 255, 0.022) 1px,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px,
             transparent 26px
         ),
@@ -95,8 +95,8 @@
         radial-gradient(circle at 82% 88%, rgba(22, 3, 8, 0.68) 0%, transparent 54%),
         repeating-linear-gradient(
             45deg,
-            rgba(217, 190, 140, 0.028) 0px,
-            rgba(217, 190, 140, 0.028) 1px,
+            rgba(217, 190, 140, 0.032) 0px,
+            rgba(217, 190, 140, 0.032) 1px,
             transparent 1px,
             transparent 18px
         ),
@@ -107,8 +107,8 @@
         radial-gradient(circle at 20% 80%, rgba(8, 34, 21, 0.52) 0%, transparent 50%),
         repeating-linear-gradient(
             -45deg,
-            rgba(255, 248, 224, 0.025) 0px,
-            rgba(255, 248, 224, 0.025) 2px,
+            rgba(255, 248, 224, 0.03) 0px,
+            rgba(255, 248, 224, 0.03) 2px,
             transparent 2px,
             transparent 18px
         ),
@@ -119,8 +119,8 @@
         radial-gradient(circle at 88% 85%, rgba(78, 13, 25, 0.09) 0%, transparent 46%),
         repeating-radial-gradient(
             circle at 20% 20%,
-            rgba(183, 148, 88, 0.06) 0px,
-            rgba(183, 148, 88, 0.06) 1.5px,
+            rgba(183, 148, 88, 0.065) 0px,
+            rgba(183, 148, 88, 0.065) 1.5px,
             transparent 1.5px,
             transparent 24px
         ),
@@ -131,8 +131,8 @@
         radial-gradient(circle at 85% 80%, rgba(96, 15, 30, 0.36) 0%, transparent 50%),
         repeating-linear-gradient(
             135deg,
-            rgba(217, 190, 140, 0.03) 0px,
-            rgba(217, 190, 140, 0.03) 1px,
+            rgba(217, 190, 140, 0.035) 0px,
+            rgba(217, 190, 140, 0.035) 1px,
             transparent 1px,
             transparent 16px
         ),
@@ -143,8 +143,8 @@
         radial-gradient(circle at 85% 85%, rgba(13, 59, 40, 0.12) 0%, transparent 48%),
         repeating-linear-gradient(
             45deg,
-            rgba(166, 128, 66, 0.035) 0px,
-            rgba(166, 128, 66, 0.035) 1px,
+            rgba(166, 128, 66, 0.04) 0px,
+            rgba(166, 128, 66, 0.04) 1px,
             transparent 1px,
             transparent 14px
         ),
@@ -462,7 +462,6 @@ body {
     perspective: 1000px;
 }
 
-/* Kartu undangan di dalam amplop yang terangkat naik saat amplop dibuka */
 .envelope-pocket-inside {
     position: absolute;
     left: 14px;
@@ -514,7 +513,6 @@ body {
     z-index: 1;
 }
 
-/* Kantong bawah amplop berbentuk V agar kartu terlihat keluar dari dalam */
 .envelope-card::after {
     content: "";
     position: absolute;
@@ -527,7 +525,6 @@ body {
     z-index: 3;
 }
 
-/* Tutup amplop berengsel */
 .envelope-flap-lace {
     position: absolute;
     top: 0;
@@ -572,7 +569,6 @@ body {
     z-index: 5;
 }
 
-/* Status terbuka */
 .envelope-trigger.is-open .envelope-flap-lace {
     transform: rotateX(-165deg);
     opacity: 0.65;
@@ -658,11 +654,28 @@ body {
     position: relative;
     border: 1.5px dashed #b79458;
     border-radius: 166px 166px 28px 28px;
-    padding: 48px 28px 36px;
+    padding: 44px 28px 36px;
     text-align: center;
     background:
         radial-gradient(circle at 50% 0%, rgba(217, 190, 140, 0.16) 0%, transparent 55%),
         rgba(255, 253, 248, 0.78);
+}
+
+.ar-rum-arch-inner::before {
+    content: "QS. AR-RUM • 21";
+    position: relative;
+    display: inline-block;
+    padding: 4px 14px;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6b1021 0%, #470c17 100%);
+    border: 1px solid rgba(217, 190, 140, 0.85);
+    color: #fff6e0;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    box-shadow: 0 4px 12px rgba(71, 12, 23, 0.22);
 }
 
 .arch-corner {
@@ -685,13 +698,25 @@ body {
     letter-spacing: 0.02em;
 }
 
-.ayat-text {
+.ar-rum-arch-inner .ayat-text {
+    position: relative;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: clamp(1.12rem, 2.5vw, 1.38rem);
     line-height: 1.78;
     color: #2b211c;
-    margin-bottom: 14px;
+    padding: 14px 16px;
+    margin: 10px auto 16px;
+    max-width: 94%;
+    background: linear-gradient(
+        90deg,
+        rgba(217, 190, 140, 0.14) 0%,
+        rgba(255, 252, 245, 0.65) 50%,
+        rgba(217, 190, 140, 0.14) 100%
+    );
+    border-left: 2.5px solid #9b763d;
+    border-right: 2.5px solid #9b763d;
+    border-radius: 10px;
 }
 
 .ayat-divider {
@@ -710,6 +735,18 @@ body {
     width: 48px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #b79458, transparent);
+}
+
+.ar-rum-arch-inner .ayat-divider span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff9ec;
+    border: 1px solid rgba(183, 148, 88, 0.65);
+    box-shadow: 0 3px 8px rgba(124, 93, 50, 0.14);
 }
 
 .ayat-sumber {
@@ -1499,7 +1536,37 @@ body {
     box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45), inset 0 0 0 4px rgba(255, 252, 245, 0.5);
 }
 
+.closing-card-frame::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed rgba(155, 118, 61, 0.65);
+    border-radius: 18px;
+    pointer-events: none;
+}
+
+.closing-card-frame::after {
+    content: "OUR WARMEST THANKS";
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0d3b28 0%, #062116 100%);
+    border: 1px solid var(--gold-accent);
+    color: #fff6e0;
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
 .closing-crest {
+    position: relative;
+    z-index: 1;
     display: inline-block;
     color: #9b763d;
     font-size: 1.1rem;
@@ -1508,21 +1575,36 @@ body {
 }
 
 .closing-message {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-serif);
     font-size: 1.16rem;
     line-height: 1.72;
     margin-bottom: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 253, 248, 0.72);
+    border-top: 1px solid rgba(155, 118, 61, 0.4);
+    border-bottom: 1px solid rgba(155, 118, 61, 0.4);
+    border-radius: 12px;
 }
 
 .closing-until-meet {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 1.06rem;
-    color: #7c5d32;
+    color: #5a3f1b;
     margin-bottom: 14px;
+    padding: 5px 16px;
+    border-radius: 999px;
+    background: rgba(217, 190, 140, 0.22);
 }
 
 .closing-couple-names {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-script);
     font-size: clamp(2.4rem, 6vw, 3.2rem);
     color: var(--maroon-mid);
@@ -1530,6 +1612,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    padding-top: 6px;
 }
 
 .closing-tassel {
