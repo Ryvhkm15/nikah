@@ -3,6 +3,7 @@
 // ==========================================
 const CONFIG = {
     namaPanggilan: "Herlangga & Zalsa",
+    monogramAmplop: "H & Z",
     namaFooter: "HERLANGGA & ZALSA",
     namaPria: "Herlangga Aprilyansah",
     ortuPria: "Putra Pertama dari\nBapak Ramlan\n& Ibu Hernawati",
@@ -34,26 +35,88 @@ const CONFIG = {
     urlMusik: "audio/marry-your-daughter.mp3.mp3",
 
     // =========================================================
-    // BACKGROUND TIAP BAGIAN & AMPLOP (BISA GAMBAR / WARNA / GRADASI)
-    // Simpan gambar kanan di: img/bg-floral-velvet.jpg
-    // Simpan gambar tirai polos di: img/bg-velvet-plain.jpg
+    // BACKGROUND BERLAPIS & BERTEKSTUR TIAP BAGIAN (TIDAK POLOS)
     // =========================================================
     backgrounds: {
-        heroCover: 'linear-gradient(180deg, rgba(6, 28, 18, 0.52) 0%, rgba(6, 24, 16, 0.68) 100%), url("img/bg-floral-velvet.jpg") center/cover no-repeat fixed #092b1c',
-        ayatSection: 'linear-gradient(180deg, rgba(6, 26, 17, 0.62) 0%, rgba(6, 26, 17, 0.72) 100%), url("img/bg-velvet-plain.jpg") center/cover no-repeat #082719',
-        mempelaiSection: "#3c0913",
-        acaraSection: "#f6f1e7",
-        stdSection: 'linear-gradient(180deg, rgba(31, 47, 31, 0.62) 0%, rgba(25, 39, 25, 0.74) 100%), url("img/bg-floral-velvet.jpg") center/cover no-repeat #2b3e2b',
-        giftSection: "#470c17",
-        storySection: 'linear-gradient(180deg, rgba(31, 47, 31, 0.68) 0%, rgba(25, 39, 25, 0.78) 100%), url("img/bg-velvet-plain.jpg") center/cover no-repeat #2b3e2b',
-        galeriSection: "#fbf8f2",
-        penutupSection: 'linear-gradient(180deg, rgba(6, 28, 18, 0.6) 0%, rgba(6, 24, 16, 0.72) 100%), url("img/bg-floral-velvet.jpg") center/cover no-repeat #09291a',
-        ucapanSection: "#f5f0e6",
+        heroCover: [
+            'radial-gradient(ellipse 72% 48% at 50% 16%, rgba(245, 226, 186, 0.18) 0%, transparent 62%)',
+            'radial-gradient(circle at 16% 82%, rgba(217, 190, 140, 0.2) 0%, transparent 45%)',
+            'radial-gradient(circle at 86% 74%, rgba(24, 112, 74, 0.48) 0%, transparent 52%)',
+            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.035) 0px, rgba(217, 190, 140, 0.035) 1px, transparent 1px, transparent 18px)',
+            'linear-gradient(155deg, #041910 0%, #0b3624 48%, #04160e 100%)'
+        ].join(", "),
+
+        ayatSection: [
+            'radial-gradient(circle at 50% 22%, rgba(217, 190, 140, 0.22) 0%, transparent 52%)',
+            'radial-gradient(circle at 12% 88%, rgba(78, 13, 25, 0.28) 0%, transparent 48%)',
+            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.04) 0px, rgba(217, 190, 140, 0.04) 2px, transparent 2px, transparent 16px)',
+            'repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.022) 0px, rgba(255, 255, 255, 0.022) 2px, transparent 2px, transparent 16px)',
+            'linear-gradient(175deg, #051f14 0%, #0d3b27 52%, #051a11 100%)'
+        ].join(", "),
+
+        mempelaiSection: [
+            'radial-gradient(ellipse 68% 45% at 50% 10%, rgba(245, 226, 186, 0.18) 0%, transparent 60%)',
+            'radial-gradient(circle at 85% 24%, rgba(217, 190, 140, 0.16) 0%, transparent 44%)',
+            'radial-gradient(circle at 18% 82%, rgba(158, 25, 52, 0.48) 0%, transparent 52%)',
+            'repeating-radial-gradient(circle at 50% 50%, rgba(255, 232, 188, 0.035) 0px, rgba(255, 232, 188, 0.035) 2px, transparent 2px, transparent 20px)',
+            'linear-gradient(165deg, #25040b 0%, #4d0c19 52%, #200309 100%)'
+        ].join(", "),
+
+        acaraSection: [
+            'radial-gradient(circle at 14% 16%, rgba(217, 190, 140, 0.34) 0%, transparent 42%)',
+            'radial-gradient(circle at 88% 84%, rgba(13, 59, 40, 0.12) 0%, transparent 48%)',
+            'repeating-linear-gradient(-45deg, rgba(183, 148, 88, 0.05) 0px, rgba(183, 148, 88, 0.05) 1px, transparent 1px, transparent 16px)',
+            'linear-gradient(180deg, #fcf8f0 0%, #f3e8d4 55%, #eadcc3 100%)'
+        ].join(", "),
+
+        stdSection: [
+            'radial-gradient(ellipse 75% 42% at 50% 14%, rgba(255, 245, 208, 0.22) 0%, transparent 62%)',
+            'radial-gradient(circle at 14% 85%, rgba(13, 74, 48, 0.45) 0%, transparent 50%)',
+            'radial-gradient(circle at 88% 72%, rgba(217, 190, 140, 0.14) 0%, transparent 42%)',
+            'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 26px)',
+            'linear-gradient(175deg, #1d2d1d 0%, #314931 50%, #172417 100%)'
+        ].join(", "),
+
+        giftSection: [
+            'radial-gradient(ellipse 72% 44% at 50% 10%, rgba(245, 226, 186, 0.2) 0%, transparent 58%)',
+            'radial-gradient(circle at 15% 75%, rgba(217, 190, 140, 0.12) 0%, transparent 42%)',
+            'radial-gradient(circle at 82% 88%, rgba(22, 3, 8, 0.68) 0%, transparent 54%)',
+            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.032) 0px, rgba(217, 190, 140, 0.032) 1px, transparent 1px, transparent 18px)',
+            'linear-gradient(170deg, #32060f 0%, #570e1c 50%, #29040b 100%)'
+        ].join(", "),
+
+        storySection: [
+            'radial-gradient(circle at 80% 20%, rgba(217, 190, 140, 0.18) 0%, transparent 46%)',
+            'radial-gradient(circle at 20% 80%, rgba(8, 34, 21, 0.52) 0%, transparent 50%)',
+            'repeating-linear-gradient(-45deg, rgba(255, 248, 224, 0.03) 0px, rgba(255, 248, 224, 0.03) 2px, transparent 2px, transparent 18px)',
+            'linear-gradient(180deg, #1b2b1b 0%, #2d422d 52%, #152215 100%)'
+        ].join(", "),
+
+        galeriSection: [
+            'radial-gradient(ellipse 70% 38% at 50% 8%, rgba(217, 190, 140, 0.3) 0%, transparent 55%)',
+            'radial-gradient(circle at 88% 85%, rgba(78, 13, 25, 0.09) 0%, transparent 46%)',
+            'repeating-radial-gradient(circle at 20% 20%, rgba(183, 148, 88, 0.065) 0px, rgba(183, 148, 88, 0.065) 1.5px, transparent 1.5px, transparent 24px)',
+            'linear-gradient(180deg, #fefbf5 0%, #f5ebd8 55%, #ebe0ca 100%)'
+        ].join(", "),
+
+        penutupSection: [
+            'radial-gradient(ellipse 72% 45% at 50% 18%, rgba(245, 226, 186, 0.2) 0%, transparent 60%)',
+            'radial-gradient(circle at 85% 80%, rgba(96, 15, 30, 0.36) 0%, transparent 50%)',
+            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.035) 0px, rgba(217, 190, 140, 0.035) 1px, transparent 1px, transparent 16px)',
+            'linear-gradient(165deg, #051d12 0%, #0d3b27 52%, #04170e 100%)'
+        ].join(", "),
+
+        ucapanSection: [
+            'radial-gradient(circle at 18% 16%, rgba(217, 190, 140, 0.26) 0%, transparent 44%)',
+            'radial-gradient(circle at 85% 85%, rgba(13, 59, 40, 0.12) 0%, transparent 48%)',
+            'repeating-linear-gradient(45deg, rgba(166, 128, 66, 0.04) 0px, rgba(166, 128, 66, 0.04) 1px, transparent 1px, transparent 14px)',
+            'linear-gradient(180deg, #faf5ec 0%, #efe4d1 100%)'
+        ].join(", "),
 
         // Background amplop masing-masing
-        amplopHero: "linear-gradient(165deg, #fbf6ec 0%, #f1e5ce 100%)",
-        amplopAyat: "linear-gradient(165deg, #f8f1e3 0%, #eadbc0 100%)",
-        amplopPenutup: "linear-gradient(165deg, #f7efe0 0%, #e7d8be 100%)"
+        amplopHero: 'radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 55%), linear-gradient(160deg, #fffaf0 0%, #ebd9b7 100%)',
+        amplopAyat: 'radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.7) 0%, transparent 55%), linear-gradient(160deg, #fcf5e8 0%, #e4cfa9 100%)',
+        amplopPenutup: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 55%), linear-gradient(160deg, #fbf3e4 0%, #e1caa3 100%)'
     },
 
     rek1Nomor: "1122334455",
@@ -118,7 +181,18 @@ function setSrc(id, value) {
     if (el && value) el.src = value;
 }
 
+// Nama tamu dari URL (?to=Nama+Tamu)
+(function applyGuestName() {
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("to") || params.get("tamu");
+    if (guest && guest.trim()) {
+        setText("nama-tamu", guest.trim());
+    }
+})();
+
+// Isi data ke elemen HTML
 setText("display-nama-pasangan", CONFIG.namaPanggilan);
+setText("display-monogram-amplop", CONFIG.monogramAmplop);
 setText("display-footer-nama", CONFIG.namaFooter);
 setText("display-nama-pria", CONFIG.namaPria);
 setText("display-ortu-pria", CONFIG.ortuPria);
@@ -129,8 +203,7 @@ setText("display-ayat-teks", CONFIG.ayatTeks);
 setText("display-ayat-sumber", CONFIG.ayatSumber);
 
 setText("display-tanggal-hero", CONFIG.tanggalTeks);
-setText("display-tanggal-acara", CONFIG.tanggalTeks);
-setText("display-jam-acara", CONFIG.jamAcara);
+setText("display-std-waktu-lengkap", `${CONFIG.tanggalTeks} | ${CONFIG.jamAcara}`);
 
 setText("display-std-bulan", CONFIG.stdBulan);
 setText("display-std-tanggal", CONFIG.stdTanggal);
@@ -142,20 +215,23 @@ setText("display-detail-tanggal-akad", CONFIG.tanggalTeks);
 setText("display-detail-tanggal-resepsi", CONFIG.tanggalTeks);
 setText("display-detail-jam-akad", CONFIG.detailJamAkad);
 setText("display-detail-jam-resepsi", CONFIG.detailJamResepsi);
-setText("display-detail-lokasi-akad", CONFIG.detailLokasiUpper);
 setText("display-detail-lokasi-resepsi", CONFIG.detailLokasiUpper);
 setText("display-detail-alamat-akad", CONFIG.detailAlamatLines);
 setText("display-detail-alamat-resepsi", CONFIG.detailAlamatLines);
 
-setText("display-nama-lokasi", CONFIG.namaLokasi);
-setText("display-alamat-lengkap", CONFIG.alamatLengkap);
+const mapsLink = document.getElementById("display-link-maps-detail");
+if (mapsLink && CONFIG.linkMaps) {
+    mapsLink.href = CONFIG.linkMaps;
+}
 
 setText("display-rek1-nomor", CONFIG.rek1Nomor);
 setText("display-rek1-bank", CONFIG.rek1Bank);
 setText("display-rek1-nama", CONFIG.rek1Nama);
+
 setText("display-rek2-nomor", CONFIG.rek2Nomor);
 setText("display-rek2-bank", CONFIG.rek2Bank);
 setText("display-rek2-nama", CONFIG.rek2Nama);
+
 setText("display-kado-penerima", CONFIG.kadoPenerima);
 setText("display-kado-alamat", CONFIG.kadoAlamat);
 setText("display-kado-wa", CONFIG.kadoWA);
@@ -170,318 +246,298 @@ setText("display-story-judul-3", CONFIG.storyJudul3);
 setText("display-story-teks-3", CONFIG.storyTeks3);
 
 if (Array.isArray(CONFIG.galeriFoto)) {
-    CONFIG.galeriFoto.forEach((src, idx) => {
-        setSrc(`display-galeri-${idx + 1}`, src);
+    CONFIG.galeriFoto.forEach((src, index) => {
+        setSrc(`display-galeri-${index + 1}`, src);
     });
 }
 
-const closingNamaEl = document.getElementById("display-closing-nama");
-if (closingNamaEl) {
-    closingNamaEl.innerHTML = `<span>${CONFIG.closingPria}</span><span class="closing-amp">&amp;</span><span>${CONFIG.closingWanita}</span>`;
+const closingEl = document.getElementById("display-closing-nama");
+if (closingEl) {
+    closingEl.innerHTML = `<span>${CONFIG.closingPria}</span><span class="closing-amp">&</span><span>${CONFIG.closingWanita}</span>`;
 }
 
-const linkMapsEl = document.getElementById("display-link-maps");
-if (linkMapsEl) linkMapsEl.href = CONFIG.linkMaps;
+// ==========================================
+// AMPLOP BISA DIBUKA / DITUTUP + MUSIK
+// ==========================================
+const audio = document.getElementById("bg-music");
+const musicBtn = document.getElementById("music-toggle");
+const bukaBtn = document.getElementById("btn-buka-undangan");
+const hintText = document.getElementById("envelope-hint-text");
 
-const linkMapsDetailEl = document.getElementById("display-link-maps-detail");
-if (linkMapsDetailEl) linkMapsDetailEl.href = CONFIG.linkMaps;
+if (audio && CONFIG.urlMusik) {
+    const sourceEl = audio.querySelector("source");
+    if (sourceEl) {
+        sourceEl.src = CONFIG.urlMusik;
+        audio.load();
+    }
+}
 
-// =========================================================
-// BANYAK BLINK-BLINK BINTANG & KILAU DI SAVE THE DATE
-// =========================================================
-function buatBlinkSaveTheDate() {
+function updateMusicButton() {
+    if (!musicBtn || !audio) return;
+    musicBtn.textContent = audio.paused ? "Musik: OFF" : "Musik: ON";
+}
+
+function toggleMusic(forcePlay = false) {
+    if (!audio) return;
+    if (forcePlay || audio.paused) {
+        audio.play().then(updateMusicButton).catch(() => updateMusicButton());
+    } else {
+        audio.pause();
+        updateMusicButton();
+    }
+}
+
+if (musicBtn) {
+    musicBtn.addEventListener("click", () => toggleMusic(false));
+}
+
+if (bukaBtn) {
+    bukaBtn.addEventListener("click", () => {
+        const isNowOpen = bukaBtn.classList.toggle("is-open");
+        if (hintText) {
+            hintText.textContent = isNowOpen
+                ? "AMPLOP TERBUKA - KLIK LAGI UNTUK MENUTUP"
+                : "CLICK ENVELOPE TO OPEN";
+        }
+        if (isNowOpen) {
+            toggleMusic(true);
+            const targetSection = document.getElementById("ayat");
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: "smooth" });
+                }, 650);
+            }
+        }
+    });
+}
+
+// ==========================================
+// COUNTDOWN TIMER
+// ==========================================
+(function initCountdown() {
+    const targetTime = new Date(CONFIG.tanggalCountdown).getTime();
+    if (Number.isNaN(targetTime)) return;
+
+    function updateTimer() {
+        const diff = Math.max(0, targetTime - Date.now());
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        setText("days", String(days).padStart(2, "0"));
+        setText("hours", String(hours).padStart(2, "0"));
+        setText("minutes", String(minutes).padStart(2, "0"));
+        setText("seconds", String(seconds).padStart(2, "0"));
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+})();
+
+// ==========================================
+// SPARKLES DI SAVE THE DATE
+// ==========================================
+(function initSparkles() {
     const container = document.getElementById("std-sparkles");
     if (!container) return;
 
-    const simbolBintang = ["✦", "✧", "⋆", "✨", "✵"];
-    const totalBlink = 46;
-
-    for (let i = 0; i < totalBlink; i++) {
-        const isStar = i % 2 === 0;
-        const el = document.createElement("span");
-        el.className = isStar ? "sparkle-star" : "sparkle-dot";
-
-        const top = Math.random() * 96 + 2;
-        const left = Math.random() * 96 + 2;
-        const dur = (Math.random() * 2.2 + 1.5).toFixed(2) + "s";
-        const delay = (Math.random() * 3.2).toFixed(2) + "s";
-
-        el.style.top = `${top}%`;
-        el.style.left = `${left}%`;
-        el.style.setProperty("--dur", dur);
-        el.style.setProperty("--delay", delay);
-
-        if (isStar) {
-            el.textContent = simbolBintang[i % simbolBintang.length];
-            const size = (Math.random() * 0.9 + 0.65).toFixed(2);
-            el.style.fontSize = `${size}rem`;
-        } else {
-            const px = Math.floor(Math.random() * 5) + 4;
-            el.style.width = `${px}px`;
-            el.style.height = `${px}px`;
-        }
-
-        container.appendChild(el);
+    for (let i = 0; i < 18; i++) {
+        const star = document.createElement("span");
+        star.className = "sparkle-star";
+        star.textContent = "✦";
+        star.style.left = `${(i * 19 + 7) % 96}%`;
+        star.style.top = `${(i * 29 + 11) % 92}%`;
+        star.style.fontSize = `${0.65 + (i % 4) * 0.22}rem`;
+        star.style.setProperty("--dur", `${2 + (i % 5) * 0.45}s`);
+        star.style.setProperty("--delay", `${(i % 6) * 0.35}s`);
+        container.appendChild(star);
     }
-}
-buatBlinkSaveTheDate();
 
-// =========================================================
-// EFEK KETIKAN (TYPEWRITER) PADA TULISAN MASING-MASING
-// =========================================================
-const semuaKetikan = document.querySelectorAll(".typewriter-text");
-semuaKetikan.forEach((el) => {
-    const teksAsli = el.textContent.replace(/\s+/g, " ").trim();
-    el.dataset.fullText = teksAsli;
+    for (let j = 0; j < 16; j++) {
+        const dot = document.createElement("span");
+        dot.className = "sparkle-dot";
+        const size = 4 + (j % 3) * 3;
+        dot.style.width = `${size}px`;
+        dot.style.height = `${size}px`;
+        dot.style.left = `${(j * 23 + 13) % 95}%`;
+        dot.style.top = `${(j * 31 + 6) % 90}%`;
+        dot.style.setProperty("--dur", `${2.2 + (j % 4) * 0.5}s`);
+        dot.style.setProperty("--delay", `${(j % 5) * 0.4}s`);
+        container.appendChild(dot);
+    }
+})();
+
+// ==========================================
+// EFEK KETIKAN (TYPEWRITER) & SCROLL REVEAL
+// ==========================================
+function runTypewriter(el) {
+    if (!el || el.dataset.typedDone === "true") return;
+    const fullText = el.textContent;
+    if (!fullText || !fullText.trim()) return;
+
+    const speed = Number(el.getAttribute("data-speed")) || 25;
+    el.dataset.typedDone = "true";
     el.textContent = "";
-});
-
-function jalankanKetikan(el) {
-    if (!el || el.dataset.typed === "true") return;
-    el.dataset.typed = "true";
-
-    const fullText = el.dataset.fullText || "";
-    const speed = Number(el.dataset.speed) || 28;
     el.classList.add("typing-active");
 
-    let index = 0;
-    function ketikKarakter() {
-        if (index <= fullText.length) {
-            el.textContent = fullText.slice(0, index);
-            index++;
-            setTimeout(ketikKarakter, speed);
+    let idx = 0;
+    function step() {
+        idx += 1;
+        el.textContent = fullText.slice(0, idx);
+        if (idx < fullText.length) {
+            setTimeout(step, speed);
         } else {
             el.classList.remove("typing-active");
         }
     }
-    ketikKarakter();
+    step();
 }
 
-function picuKetikanDiSection(sectionEl) {
-    if (!sectionEl) return;
-    const daftarTeks = sectionEl.querySelectorAll(".typewriter-text");
-    daftarTeks.forEach((el, idx) => {
-        setTimeout(() => {
-            jalankanKetikan(el);
-        }, idx * 240);
-    });
-}
+(function initRevealAndTypewriter() {
+    const sections = document.querySelectorAll(".anim-section");
+    if (!sections.length) return;
 
-// Animasi estetik & ketikan saat bagian masuk ke layar
-const animSections = document.querySelectorAll(".anim-section");
-if ("IntersectionObserver" in window) {
+    const reduceMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function activateSection(section) {
+        if (section.dataset.activated === "true") return;
+        section.dataset.activated = "true";
+        section.classList.add("anim-visible");
+
+        const typeEls = section.querySelectorAll(".typewriter-text");
+        if (reduceMotion) {
+            typeEls.forEach((el) => {
+                el.dataset.typedDone = "true";
+            });
+            return;
+        }
+
+        typeEls.forEach((el, i) => {
+            setTimeout(() => runTypewriter(el), i * 110);
+        });
+    }
+
+    const coverSection = document.getElementById("cover");
+    if (coverSection) activateSection(coverSection);
+
+    if (!("IntersectionObserver" in window)) {
+        sections.forEach(activateSection);
+        return;
+    }
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("anim-visible");
-                    picuKetikanDiSection(entry.target);
+                    activateSection(entry.target);
                     observer.unobserve(entry.target);
                 }
             });
         },
         { threshold: 0.12 }
     );
-    animSections.forEach((sec) => observer.observe(sec));
-} else {
-    animSections.forEach((sec) => {
-        sec.classList.add("anim-visible");
-        picuKetikanDiSection(sec);
-    });
-}
 
-const urlParams = new URLSearchParams(window.location.search);
-const tamu = urlParams.get("to");
-if (tamu) {
-    setText("nama-tamu", tamu);
-}
+    sections.forEach((sec) => observer.observe(sec));
+})();
 
-const audioEl = document.getElementById("bg-music");
-const musicBtn = document.getElementById("music-toggle");
-const bukaBtn = document.getElementById("btn-buka-undangan");
-
-if (audioEl && CONFIG.urlMusik) {
-    audioEl.src = CONFIG.urlMusik;
-}
-
-function perbaruiLabelMusik() {
-    if (!musicBtn || !audioEl) return;
-    musicBtn.innerText = audioEl.paused ? "🎵 Musik: OFF" : "🎶 Musik: ON";
-}
-
-async function toggleMusik(paksaPutar = false) {
-    if (!audioEl) return;
-    try {
-        if (paksaPutar || audioEl.paused) {
-            await audioEl.play();
-        } else {
-            audioEl.pause();
-        }
-    } catch (err) {
-        console.warn("Pemutaran audio diblokir browser hingga ada interaksi pengguna:", err);
-    }
-    perbaruiLabelMusik();
-}
-
-if (musicBtn) {
-    musicBtn.addEventListener("click", () => toggleMusik(false));
-}
-
-if (bukaBtn) {
-    bukaBtn.addEventListener("click", async () => {
-        await toggleMusik(true);
-        const ayatSection = document.getElementById("ayat");
-        if (ayatSection) {
-            ayatSection.scrollIntoView({ behavior: "smooth" });
-        }
-    });
-}
-
-async function salinTeks(teks) {
-    if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(teks);
-        return;
-    }
-    const tempInput = document.createElement("textarea");
-    tempInput.value = teks;
-    tempInput.style.position = "fixed";
-    tempInput.style.opacity = "0";
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-}
-
+// ==========================================
+// TOMBOL COPY NOMOR REKENING
+// ==========================================
 document.querySelectorAll(".btn-olive-copy").forEach((btn) => {
     btn.addEventListener("click", async () => {
         const targetId = btn.getAttribute("data-copy-target");
         const targetEl = targetId ? document.getElementById(targetId) : null;
+        const labelEl = btn.querySelector(".copy-label");
         if (!targetEl) return;
 
-        const teksDisalin = targetEl.innerText.trim();
-        const labelEl = btn.querySelector(".copy-label");
-
+        const textToCopy = targetEl.innerText.trim();
         try {
-            await salinTeks(teksDisalin);
-            btn.classList.add("copied");
-            if (labelEl) labelEl.textContent = "Copied";
-            setTimeout(() => {
-                btn.classList.remove("copied");
-                if (labelEl) labelEl.textContent = "Copy";
-            }, 1800);
+            await navigator.clipboard.writeText(textToCopy);
         } catch {
-            if (labelEl) labelEl.textContent = "Gagal";
-            setTimeout(() => {
-                if (labelEl) labelEl.textContent = "Copy";
-            }, 1800);
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
         }
+
+        btn.classList.add("copied");
+        if (labelEl) labelEl.textContent = "Tersalin";
+        setTimeout(() => {
+            btn.classList.remove("copied");
+            if (labelEl) labelEl.textContent = "Copy";
+        }, 1800);
     });
 });
 
-const targetDate = new Date(CONFIG.tanggalCountdown).getTime();
+// ==========================================
+// FORM UCAPAN & KONFIRMASI HADIR
+// ==========================================
+(function initRSVP() {
+    const form = document.getElementById("rsvp-form");
+    const listEl = document.getElementById("daftar-ucapan");
+    if (!form || !listEl) return;
 
-function updateCountdown() {
-    if (Number.isNaN(targetDate)) return;
+    const STORAGE_KEY = "undangan_ucapan_herlangga_zalsa";
 
-    const now = Date.now();
-    const distance = targetDate - now;
-
-    if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        setText("days", String(days).padStart(2, "0"));
-        setText("hours", String(hours).padStart(2, "0"));
-        setText("minutes", String(minutes).padStart(2, "0"));
-        setText("seconds", String(seconds).padStart(2, "0"));
-    } else {
-        setText("days", "00");
-        setText("hours", "00");
-        setText("minutes", "00");
-        setText("seconds", "00");
-    }
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-const STORAGE_KEY = "undangan_rsvp_ucapan_v1";
-const rsvpForm = document.getElementById("rsvp-form");
-const daftarUcapan = document.getElementById("daftar-ucapan");
-let fallbackUcapan = [];
-
-function ambilUcapan() {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : [];
-    } catch {
-        return fallbackUcapan;
-    }
-}
-
-function simpanUcapan(items) {
-    fallbackUcapan = items;
-    try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch {
-        // Abaikan jika penyimpanan lokal dibatasi browser
-    }
-}
-
-function renderUcapan() {
-    if (!daftarUcapan) return;
-    const items = ambilUcapan();
-    daftarUcapan.innerHTML = "";
-
-    if (items.length === 0) {
-        daftarUcapan.innerHTML = `<p class="ucapan-empty-note">Belum ada ucapan masuk. Jadilah yang pertama mengirim doa.</p>`;
-        return;
+    function loadUcapan() {
+        try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        } catch {
+            return [];
+        }
     }
 
-    items.forEach((item) => {
-        const card = document.createElement("div");
-        card.className = "ucapan-item";
+    function saveUcapan(items) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        } catch {
+            // Abaikan jika storage tidak tersedia
+        }
+    }
 
-        const header = document.createElement("div");
-        header.className = "ucapan-header";
+    function renderUcapan() {
+        const items = loadUcapan();
+        listEl.innerHTML = "";
+        items.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "ucapan-item";
 
-        const namaEl = document.createElement("strong");
-        namaEl.textContent = item.nama;
+            const nama = document.createElement("strong");
+            nama.textContent = item.nama;
 
-        const badgeEl = document.createElement("span");
-        badgeEl.className = "badge-hadir";
-        badgeEl.textContent = item.status;
+            const badge = document.createElement("span");
+            badge.className = "ucapan-status";
+            badge.textContent = item.status;
 
-        const pesanEl = document.createElement("p");
-        pesanEl.textContent = item.pesan;
+            const pesan = document.createElement("p");
+            pesan.textContent = item.pesan;
 
-        header.append(namaEl, badgeEl);
-        card.append(header, pesanEl);
-        daftarUcapan.appendChild(card);
-    });
-}
+            card.append(nama, badge, pesan);
+            listEl.appendChild(card);
+        });
+    }
 
-if (rsvpForm) {
-    rsvpForm.addEventListener("submit", (e) => {
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
         const namaInput = document.getElementById("rsvp-nama");
         const statusInput = document.getElementById("rsvp-status");
         const pesanInput = document.getElementById("rsvp-pesan");
 
         const nama = namaInput ? namaInput.value.trim() : "";
-        const status = statusInput ? statusInput.value : "";
+        const status = statusInput ? statusInput.value.trim() : "";
         const pesan = pesanInput ? pesanInput.value.trim() : "";
         if (!nama || !status || !pesan) return;
 
-        const items = ambilUcapan();
+        const items = loadUcapan();
         items.unshift({ nama, status, pesan });
-        simpanUcapan(items);
-
-        rsvpForm.reset();
+        saveUcapan(items);
         renderUcapan();
+        form.reset();
     });
-}
 
-renderUcapan();
+    renderUcapan();
+})();
