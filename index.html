@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wedding - Reno & Aulia</title>
+<title>The Wedding - Herlangga & Zalsa</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#0a2e22;overflow-x:hidden}
 .script{font-family:'Great Vibes',cursive}
-#cover{ min-height:100svh; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px 18px; color:#fff;
-background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.25)), url('img/cover.jpg') center / cover no-repeat; }
+#cover{ min-height:100svh; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px 18px; color:#fff; background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.25)), url('img/cover.jpg') center / cover no-repeat; }
 #cover::after{content:""; position:absolute; inset:0; background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.35)); pointer-events:none}
 #cover > *{position:relative; z-index:2}
 .top{font-size:12px; letter-spacing:4px; text-transform:uppercase; color:#fdf8ee; margin-bottom:12px}
@@ -68,23 +67,21 @@ input,select,textarea{width:100%; padding:12px 14px; border:1px solid #ddd; bord
 </head>
 <body>
 
-<!-- COVER -->
 <section id="cover">
   <div class="top">The Wedding Of</div>
-  <h1>Reno <span>&amp;</span> Aulia</h1>
+  <h1>Herlangga <span>&amp;</span> Zalsa</h1>
   <div class="cover-date">27 . 03 . 2027</div>
   <div class="envelope" id="envelope" onclick="openInvite()">
-    <div class="env-letter"><span>YOU ARE INVITED</span><b>R &amp; A</b><span>27 . 03 . 2027</span></div>
+    <div class="env-letter"><span>YOU ARE INVITED</span><b>H &amp; Z</b><span>27 . 03 . 2027</span></div>
     <div class="env-body"></div>
     <div class="env-flap"></div>
-    <div class="env-seal">R</div>
+    <div class="env-seal">H</div>
   </div>
   <div class="guest-box"><small>Kepada Yth Bapak / Ibu / Saudara/i</small><b id="guestName">Tamu Undangan</b></div>
   <button class="btn-open" onclick="openInvite()">💌 Buka Undangan</button>
   <div class="hint">Klik amplop untuk membuka</div>
 </section>
 
-<!-- ISI -->
 <div id="main">
   <section class="page">
     <div class="card">
@@ -92,15 +89,14 @@ input,select,textarea{width:100%; padding:12px 14px; border:1px solid #ddd; bord
       <div class="gold-line"></div>
       <p style="font-size:14px;line-height:1.7">Dengan memohon rahmat &amp; ridho Allah SWT, kami bermaksud menyempurnakan separuh agama kami dalam ikatan suci pernikahan.</p>
       <br>
-      <div style="font-size:32px;line-height:1.1;font-family:'Playfair Display',serif">Reno<br>Nama Lengkap Reno</div>
+      <div style="font-size:32px;line-height:1.1;font-family:'Playfair Display',serif">Herlangga<br>Nama Lengkap Herlangga</div>
       <p style="font-size:13px;margin-top:6px">Putra dari Bapak ... &amp; Ibu ...</p>
       <div style="font-size:28px;color:#b8862e;margin:10px 0">&amp;</div>
-      <div style="font-size:32px;line-height:1.1;font-family:'Playfair Display',serif">Aulia<br>Nama Lengkap Aulia</div>
+      <div style="font-size:32px;line-height:1.1;font-family:'Playfair Display',serif">Zalsa<br>Nama Lengkap Zalsa</div>
       <p style="font-size:13px;margin-top:6px">Putri dari Bapak ... &amp; Ibu ...</p>
     </div>
   </section>
 
-  <!-- SAVE THE DATE + WAKTU + TIMER UDAH DIGABUNG -->
   <section class="page">
     <div class="card">
       <div class="save-section">
@@ -114,18 +110,13 @@ input,select,textarea{width:100%; padding:12px 14px; border:1px solid #ddd; bord
         <div class="save-year">✦ 2027 ✦</div>
         <img src="img/gedung.png" class="gedung-img" alt="Gedung">
       </div>
-
       <div class="gold-line"></div>
-
-      <!-- WAKTU -> MENJUJU -> TIMER -->
       <h2>Waktu</h2>
       <p class="typing-text"><span id="typing"></span><span class="cursor">|</span></p>
-
       <div class="count"><div><b id="d">00</b><span>Hari</span></div><div><b id="h">00</b><span>Jam</span></div><div><b id="m">00</b><span>Menit</span></div><div><b id="s">00</b><span>Detik</span></div></div>
-
       <p style="font-size:14px;line-height:1.6;margin-top:6px">Sabtu, 27 Maret 2027<br>Yayasan Darul Aitama, Jakarta</p>
       <a class="btn" href="https://maps.google.com/?q=Yayasan+Darul+Aitama+Jakarta" target="_blank">📍 Lihat Lokasi</a>
-      <a class="btn gold" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Reno+%26+Aulia&dates=20270327T120000Z/20270327T150000Z" target="_blank">📅 Save Date</a>
+      <a class="btn gold" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Herlangga+%26+Zalsa&dates=20270327T120000Z/20270327T150000Z" target="_blank">📅 Save Date</a>
     </div>
   </section>
 
@@ -146,7 +137,7 @@ input,select,textarea{width:100%; padding:12px 14px; border:1px solid #ddd; bord
       <button class="btn gold" style="width:100%;border:none;cursor:pointer" onclick="kirimUcapan()">Kirim Ucapan 💌</button>
       <div id="listUcapan"></div>
     </div>
-    <div class="footer">Terima kasih atas kehadiran &amp; doa restu Anda<br><b>Reno &amp; Aulia</b> • 27.03.2027</div>
+    <div class="footer">Terima kasih atas kehadiran &amp; doa restu Anda<br><b>Herlangga &amp; Zalsa</b> • 27.03.2027</div>
   </section>
 </div>
 
