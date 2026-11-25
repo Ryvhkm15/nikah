@@ -1,54 +1,63 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Plus Jakarta Sans",sans-serif;background:#0a1f16;color:#231b18;line-height:1.65;overflow-x:hidden}
 img{display:block;width:100%;height:100%;object-fit:cover}
-.top-label{text-align:center;font-size:12px;color:#fff;opacity:.7;padding-top:10px}
-.credit{text-align:center;color:#fff;font-size:13px;margin-top:12px}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
-.reveal.show{opacity:1;transform:translateY(0)}
-.cover{position:relative;min-height:100svh;padding:20px 16px 30px;text-align:center;overflow:hidden;background:repeating-linear-gradient(100deg,#0d2a1d 0 38px,#081c12 38px 76px,#123324 76px 110px,#071a10 110px 145px),radial-gradient(circle at 50% 28%,#154e35,#092b1c 60%,#04170f);color:#fff}
+
+/* ===== ANIMASI PER-SECTION - YANG BIKIN KELIATAN HIDUP, BUKAN LOADING POLOS ===== */
+/* Bedanya sama yang kemarin: sekarang ada blur + naik + scale, jadi keliatan animasi, bukan kosong */
+.anim-in{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) both}
+.anim-in.d1{animation-delay:.25s}
+.reveal{opacity:0;transform:translateY(36px) scale(.98);filter:blur(6px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s}
+.reveal.show{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+.reveal-item{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;transition-delay:.15s}
+.reveal.show .reveal-item{opacity:1;transform:translateY(0)}
+.reveal.show .reveal-item:nth-child(2){transition-delay:.25s}
+.reveal.show .reveal-item:nth-child(3){transition-delay:.35s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px) scale(.98);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+
+/* COVER */
+.cover{position:relative;min-height:100svh;padding:28px 16px 30px;text-align:center;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 50% 30%,rgba(255,255,255,.08),transparent 55%),repeating-linear-gradient(100deg,#0d2a1d 0 38px,#081c12 38px 76px,#123324 76px 110px,#071a10 110px 145px),radial-gradient(circle at 50% 28%,#154e35,#092b1c 60%,#04170f)}
 .cover::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 40%,rgba(0,0,0,.45));pointer-events:none}
 .cover-text{position:relative;z-index:3}
-.script-top{font-family:"Great Vibes",cursive;font-size:52px;line-height:1;transform:rotate(-4deg)}
-.getting{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:.22em;font-size:20px}
-.couple-big{font-family:"Great Vibes",cursive;font-weight:400;font-size:52px;line-height:1.1}
+.script-top{font-family:"Great Vibes",cursive;font-size:52px;line-height:1;transform:rotate(-4deg);text-shadow:0 3px 12px rgba(0,0,0,.5)}
+.getting{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:.22em;font-size:20px;text-shadow:0 3px 12px rgba(0,0,0,.5)}
+.couple-big{font-family:"Great Vibes",cursive;font-weight:400;font-size:52px;line-height:1.1;text-shadow:0 4px 16px rgba(0,0,0,.5)}
 .cover-date{font-size:13px;letter-spacing:.1em;margin:6px 0}
 .guest-badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(217,190,140,.4);padding:7px 18px;border-radius:999px;font-size:13px}
 .petals{position:absolute;inset:0;pointer-events:none;z-index:1}
 .petal{position:absolute;top:-20px;animation:fall linear infinite}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
 .env-btn{position:relative;z-index:3;background:none;border:none;cursor:pointer;margin:28px auto 0;display:block;perspective:900px;animation:floatY 3.5s ease-in-out infinite}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.floral-left{position:absolute;left:-14px;top:-22px;font-size:30px;transform:rotate(-18deg);z-index:5;animation:sway 4s ease-in-out infinite}
-.floral-right{position:absolute;right:-10px;bottom:22px;font-size:24px;z-index:5;animation:sway 4s ease-in-out infinite}
-@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.floral-left{position:absolute;left:-14px;top:-22px;font-size:30px;transform:rotate(-18deg);z-index:5}
+.floral-right{position:absolute;right:-10px;bottom:22px;font-size:24px;z-index:5}
 .envelope{position:relative;width:min(340px,86vw);height:210px;background:linear-gradient(180deg,#fdf8ee,#f1e8d5);border-radius:4px;box-shadow:0 24px 45px rgba(0,0,0,.5);overflow:hidden;transition:transform .6s}
-.env-btn:hover .envelope{transform:scale(1.03) rotate(-1deg)}
-.envelope::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;background:radial-gradient(circle at 8px 0,transparent 7px,#fdf8ee 8px);background-size:16px 12px;transform:rotate(180deg);z-index:5}
 .env-letter{position:absolute;inset:14px;background:#fffdf8;border:1px dashed #c8ac79;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Great Vibes",cursive;font-size:26px;color:#4e0d19;transition:transform .6s;z-index:1}
 .env-letter small{font-family:"Plus Jakarta Sans",sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7c5d32}
 .env-flap{position:absolute;top:0;left:0;right:0;height:122px;background:linear-gradient(180deg,#fffdf6,#e8ddc8);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s;z-index:2}
-.wax{position:absolute;top:56%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a3263e,#580b19);color:#f7e6c4;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:3;transition:opacity .3s;animation:pulseWax 2s ease-in-out infinite}
-@keyframes pulseWax{0%,100%{box-shadow:0 0 0 0 rgba(217,190,140,.4)}50%{box-shadow:0 0 0 10px rgba(217,190,140,0)}}
+.wax{position:absolute;top:56%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a3263e,#580b19);color:#f7e6c4;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:3;transition:opacity .3s}
 .envelope.open .env-flap{transform:rotateX(175deg)}
 .envelope.open .env-letter{transform:translateY(-38px)}
 .envelope.open .wax{opacity:0}
 .click-hint{display:block;margin-top:14px;font-size:11px;letter-spacing:.22em;color:#f4ead5}
-.ayat-sec{background:#0a1f16;padding:50px 16px;text-align:center}
+
+/* MUSIK ON/OFF */
+.music-btn{position:fixed;right:18px;bottom:18px;z-index:99;background:#0c2b1e;color:#fffaf0;border:1px solid #d9be8c;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+
+/* AYAT */
+.ayat-sec{padding:60px 16px 70px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.06),transparent 50%),repeating-linear-gradient(115deg,#0a2a1c 0 30px,#071d12 30px 60px),#0a1f16}
 .ayat-wrap{position:relative;max-width:520px;margin:0 auto}
-.floral-ayat{position:absolute;left:-4px;top:-10px;font-size:26px;z-index:3}
-.floral-ayat-br{position:absolute;right:0;bottom:70px;font-size:22px;z-index:3}
-.doily{background:#f6f1e7;border-radius:50%;padding:14px;aspect-ratio:1/1.15;display:flex;align-items:center;box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.doily-in{border:1px dashed #b99c6b;border-radius:50%;padding:38px 22px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center}
-.ayat{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;line-height:1.6;color:#2b211c}
-.ayat-src{font-size:12px;font-weight:700;letter-spacing:.12em;margin-top:10px;color:#7c5d32}
+.floral-ayat{position:absolute;left:-4px;top:-14px;font-size:28px;z-index:5;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.floral-ayat-br{position:absolute;right:-2px;bottom:64px;font-size:26px;z-index:5;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.doily{background:radial-gradient(circle at 30% 20%,#fffdf5,#f6f1e7 60%,#ece3cf);border-radius:50%;padding:16px;aspect-ratio:1/1.15;display:flex;align-items:center;box-shadow:0 20px 40px rgba(0,0,0,.5),inset 0 0 0 3px #d9be8c}
+.doily-in{border:1.5px dashed #b99c6b;outline:1px solid rgba(185,156,107,.35);outline-offset:6px;border-radius:50%;padding:38px 24px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at center,#fffdf8,#f8f2e6)}
+.doily-orn{font-size:12px;letter-spacing:.3em;color:#b99c6b;margin:10px 0}
+.ayat{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;line-height:1.65;color:#2b211c}
+.ayat-src{font-size:13px;font-weight:700;letter-spacing:.14em;margin-top:12px;color:#7c5d32}
 .tassel{width:12px;height:44px;background:#6b1122;margin:-2px auto 0;border-radius:0 0 8px 8px}
-.env-pocket{max-width:420px;height:90px;background:#efe6d5;border-radius:10px;margin:-12px auto 0;display:flex;align-items:center;justify-content:center;font-size:22px}
-.player-box{margin:30px auto 0;max-width:420px;color:#fff}
-.player-btn{width:56px;height:56px;border-radius:50%;border:2px solid #d9be8c;background:transparent;color:#fff;font-size:20px;cursor:pointer}
-.player-btn.playing{animation:spin 3s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.player-label{font-size:12px;opacity:.8;margin-top:8px}
-.mempelai-sec{background:radial-gradient(circle at top,#56101d,#2a060d);padding:60px 16px;text-align:center;color:#fff}
+.env-pocket{max-width:420px;height:90px;background:linear-gradient(180deg,#f3ead6,#efe6d5);border:1px solid rgba(185,156,107,.4);border-radius:10px;margin:-12px auto 0;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 12px 24px rgba(0,0,0,.35)}
+
+/* MEMPELAI */
+.mempelai-sec{background:radial-gradient(circle at top,#5a111f,#2a060d);padding:60px 16px;text-align:center;color:#fff}
 .bismillah{font-family:"Cormorant Garamond",serif;font-size:30px;color:#d9be8c}
 .intro{font-family:"Cormorant Garamond",serif;font-size:18px;margin:14px 0 36px}
 .couple-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
@@ -57,10 +66,11 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .couple-txt.right{text-align:right}
 .name-s{font-family:"Great Vibes",cursive;font-size:36px;color:#d9be8c;line-height:1.1}
 .amp{font-family:"Great Vibes",cursive;font-size:44px;color:#d9be8c}
-.std-sec{background:#2b3e2b;color:#fff;padding:50px 16px;text-align:center;position:relative}
+
+/* SAVE DATE */
+.std-sec{background:linear-gradient(180deg,#33492f,#2b3e2b 40%,#22321f);color:#fff;padding:50px 16px;text-align:center;position:relative}
 .floral-std{position:absolute;right:10px;top:10px;font-size:22px}
-.std-title{font-family:"Great Vibes",cursive;font-size:62px;line-height:.9;animation:zoomIn 1.2s ease}
-@keyframes zoomIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.std-title{font-family:"Great Vibes",cursive;font-size:62px;line-height:.9}
 .std-title span{font-size:32px}
 .std-month{letter-spacing:.24em;margin-top:14px}
 .std-split{display:flex;align-items:center;justify-content:center;gap:18px;margin:10px 0}
@@ -74,15 +84,15 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .detail p{font-size:13px;line-height:1.6}
 .flower-line{margin:20px 0}
 .btn-maroon{display:inline-block;margin-top:14px;background:#470c17;color:#fff;padding:9px 22px;border-radius:6px;text-decoration:none;font-size:13px}
-.dress{margin-top:36px}
-.dress h3{font-family:"Great Vibes",cursive;font-size:38px}
-.dots{display:flex;gap:10px;justify-content:center;margin-top:10px}
-.dots span{width:32px;height:32px;border-radius:50%;border:2px solid #fff;display:block}
+
+/* COUNTDOWN */
 .count-sec{background:#f6f1e7;padding:50px 16px;text-align:center}
 .count-sec h2{font-family:"Cormorant Garamond",serif;font-size:30px;color:#4e0d19}
 .countdown{display:flex;gap:12px;justify-content:center;margin-top:20px}
 .countdown div{background:#fff;border:1px solid #e4d7be;border-radius:12px;padding:14px;min-width:72px}
 .countdown span{display:block;font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;color:#4e0d19}
+
+/* GIFT */
 .gift-sec{background:#470c17;color:#fff;padding:50px 16px;text-align:center}
 .gift-title{font-family:"Great Vibes",cursive;font-size:54px}
 .gift-icon{font-size:44px;margin:10px 0}
@@ -93,31 +103,36 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .wa-box{display:flex;gap:12px;justify-content:center;margin:16px 0}
 .wa-box span{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:10px 18px;font-size:13px}
 .gift-addr{font-size:13px;opacity:.9}
+
+/* LOVE STORY */
 .love-sec{background:#2b3e2b;color:#fff;padding:50px 16px}
 .love-title{font-family:"Great Vibes",cursive;font-size:52px;text-align:center;margin-bottom:20px}
 .story{max-width:520px;margin:0 auto 22px}
 .story h3{font-family:"Great Vibes",cursive;font-size:30px}
+
 /* GALLERY LAMA */
 .gallery-sec{background:#fbf8f2;padding:84px 20px;text-align:center}
 .gallery-classic-inner{max-width:960px;margin:0 auto}
 .gallery-classic-title{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;color:#4e0d19;margin-bottom:6px}
 .gallery-classic-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:#5e534d;margin-bottom:30px}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.gallery-frame{position:relative;overflow:hidden;border-radius:14px;border:2px solid #e2d2b2;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.08);transition:transform .6s,box-shadow .35s,border-color .35s}
-.gallery-frame:hover{transform:translateY(-8px) rotateY(8deg) scale(1.03);border-color:#d9be8c;box-shadow:0 16px 32px rgba(78,13,25,.14)}
-.gallery-frame img{width:100%;height:265px;object-fit:cover;object-position:center top;transition:transform .5s ease}
-.gallery-frame:hover img{transform:scale(1.06)}
+.gallery-frame{overflow:hidden;border-radius:14px;border:2px solid #e2d2b2;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.08);transition:transform .3s}
+.gallery-frame:hover{transform:translateY(-4px)}
+.gallery-frame img{height:265px;object-fit:cover}
+
+/* PENUTUP */
 .closing-sec{background:#0a1f16;padding:50px 16px;text-align:center}
 .closing-floral{font-size:22px;margin-bottom:-10px}
 .closing-oval{position:relative;max-width:420px;margin:0 auto;background:#480b16;border:2px solid rgba(217,190,140,.6);border-radius:120px 120px 14px 14px;padding:40px 22px 50px;color:#fff}
-.butterfly{position:absolute;right:20px;top:16px;font-size:22px;animation:fly 3s ease-in-out infinite}
-@keyframes fly{0%,100%{transform:translate(0,0) rotate(10deg)}50%{transform:translate(8px,-10px) rotate(-10deg)}}
+.butterfly{position:absolute;right:20px;top:16px;font-size:22px}
 .closing-oval h2{font-family:"Great Vibes",cursive;font-size:52px;line-height:.9;margin-top:20px}
 .closing-oval h2 span{font-size:36px}
 .closing-tassel{width:10px;height:44px;background:#111;margin:-2px auto 0}
 .closing-env{position:relative;max-width:360px;height:110px;background:#fdf8ee;margin:-2px auto 0}
 .closing-flap{position:absolute;inset:0;background:#e4d8c3;clip-path:polygon(0 0,100% 0,50% 78%)}
 .closing-floral-br{position:absolute;right:8px;bottom:6px;font-size:22px;z-index:2}
+
+/* RSVP */
 .rsvp-sec{background:#f5f0e6;padding:60px 16px;text-align:center}
 .rsvp-sec h2{font-family:"Cormorant Garamond",serif;font-size:32px;color:#7d623b}
 .rsvp-sec form{max-width:520px;margin:20px auto;background:#fff;padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:12px}
