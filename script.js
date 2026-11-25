@@ -106,3 +106,35 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
 reveals.forEach(r => obs.observe(r));
+function typeWriter(el) {
+  if (el.dataset.done) return;
+  el.dataset.done = "1";
+  const text = el.dataset.text || el.textContent;
+  el.textContent = "";
+  el.classList.add("typing");
+  let i = 0;
+  const speed = el.classList.contains("ayat") ? 18 : 55;
+  const timer = setInterval(() => {
+    el.textContent += text.charAt(i);
+    i++;
+    if (i >= text.length) {
+      clearInterval(timer);
+      setTimeout(() => el.classList.remove("typing"), 900);
+    }
+  }, speed);
+}
+document.querySelectorAll(".cover .typewriter").forEach((el, idx) => {
+  setTimeout(() => typeWriter(el), 300 + idx * 600);
+});
+const ayatEl = document.querySelector("#ayat .typewriter");
+if (ayatEl) {
+  const ayatObs = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        typeWriter(en.target);
+        ayatObs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  ayatObs.observe(ayatEl);
+}
