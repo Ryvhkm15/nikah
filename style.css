@@ -1095,40 +1095,62 @@ body {
     margin-bottom: 16px;
 }
 
+/* =========================================================
+   KARTU COUNTDOWN LEBIH RAPIH & PRESISI (GAMBAR 2)
+========================================================= */
 .countdown {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(68px, 86px));
     justify-content: center;
     gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
+    margin: 0 auto 28px;
 }
 
 .countdown > div {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 250, 235, 0.38);
-    border-radius: 12px;
-    padding: 12px 16px;
-    min-width: 74px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 250, 235, 0.28);
-    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
+    background: linear-gradient(180deg, rgba(255, 250, 235, 0.16) 0%, rgba(255, 250, 235, 0.07) 100%);
+    border: 1px solid rgba(245, 226, 186, 0.44);
+    border-radius: 14px;
+    padding: 13px 10px 11px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 250, 235, 0.3);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
 }
 
 .countdown > div:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 14px rgba(245, 226, 186, 0.22);
+    border-color: rgba(245, 226, 186, 0.75);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.32), 0 0 16px rgba(245, 226, 186, 0.25);
 }
 
 .countdown span {
     display: block;
     font-family: var(--font-serif);
-    font-size: 1.8rem;
+    font-size: clamp(1.65rem, 4.5vw, 2.05rem);
     font-weight: 600;
+    line-height: 1.05;
     color: #ffffff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .countdown small {
-    font-size: 0.75rem;
-    color: #e2ebe1;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #ece6d8;
+}
+
+@media (max-width: 380px) {
+    .countdown {
+        grid-template-columns: repeat(2, minmax(76px, 104px));
+        gap: 10px;
+    }
 }
 
 .venue-illustration {
@@ -1329,25 +1351,52 @@ body {
     margin-bottom: 16px;
 }
 
+/* =========================================================
+   KOTAK KADO FISIK RAPIH SEJAJAR (GAMBAR 1)
+========================================================= */
 .physical-gift-box {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 12px;
-    padding: 16px 18px;
+    background: linear-gradient(165deg, rgba(255, 250, 240, 0.11) 0%, rgba(255, 250, 240, 0.05) 100%);
+    border: 1px solid rgba(217, 190, 140, 0.36);
+    border-radius: 14px;
+    padding: 18px 20px;
     text-align: left;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 250, 235, 0.22);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 250, 235, 0.22);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .physical-line {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 10px;
     font-family: var(--font-sans);
     font-size: 0.88rem;
-    line-height: 1.65;
+    line-height: 1.6;
     color: #f8efe8;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
-.physical-line:last-child {
-    margin-bottom: 0;
+.physical-line strong {
+    color: var(--gold-bright);
+    font-weight: 600;
+}
+
+.physical-line span {
+    overflow-wrap: anywhere;
+    color: #fff8f2;
+}
+
+@media (max-width: 420px) {
+    .physical-gift-box {
+        padding: 16px;
+    }
+
+    .physical-line {
+        grid-template-columns: 98px minmax(0, 1fr);
+        font-size: 0.84rem;
+    }
 }
 
 /* =========================================================
