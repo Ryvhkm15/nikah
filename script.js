@@ -14,16 +14,16 @@ const CONFIG = {
     ayatSumber: "QS Ar-Rum 21",
 
     tanggalTeks: "Sabtu, 27 Maret 2027",
-    jamAcara: "Pukul 19.00 WIB - 21.00 WIB",
-    tanggalCountdown: "March 27, 2027 19:00:00",
+    jamAcara: "",
+    tanggalCountdown: "March 27, 2027 16:00:00",
 
     stdBulan: "MARET",
     stdTanggal: "27",
     stdTahun: "2027",
-    jamAkad: "Pukul 19.00 WIB",
-    jamResepsi: "Pukul 20.00 WIB",
-    detailJamAkad: "19.00 WIB",
-    detailJamResepsi: "20.00 WIB - 21.00 WIB",
+    jamAkad: "Pukul 16.00 WIB",
+    jamResepsi: "Pukul 19.00 - 21.00 WIB",
+    detailJamAkad: "16.00 WIB",
+    detailJamResepsi: "19.00 WIB - 21.00 WIB",
 
     namaLokasi: "Yayasan Darul Aitama",
     alamatLengkap: "Jl. K.H. Mas Mansyur No.47, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230",
@@ -31,8 +31,8 @@ const CONFIG = {
     detailAlamatLines: "Jl. K.H. Mas Mansyur No.47, Kb. Melati,\nKec. Tanah Abang, Kota Jakarta Pusat,\nDaerah Khusus Ibukota Jakarta 10230",
     linkMaps: "https://maps.app.goo.gl/vtc6LVVJoQGudwiw7",
 
-    // File lagu lokal di folder audio/
-    urlMusik: "audio/marry-your-daughter.mp3.mp3",
+    // Sesuai file di repository root
+    urlMusik: "marry-your-daughter.mp3",
 
     // =========================================================
     // BACKGROUND BERLAPIS & BERTEKSTUR TIAP BAGIAN (TIDAK POLOS)
@@ -131,8 +131,9 @@ const CONFIG = {
     kadoAlamat: "Jl. K.H. Mas Mansyur No.47, Tanah Abang, Jakarta Pusat",
     kadoWA: "08xxxxxxxxxx",
 
-    storyFoto1: "img/pria.jpg",
-    storyFoto2: "img/wanita.jpg",
+    // Sesuai nama file di repository root
+    storyFoto1: "pria.jpg",
+    storyFoto2: "wanita.jpg",
     storyJudul1: "Awal Pertemuan",
     storyTeks1: "Tidak ada yang benar-benar kebetulan di dunia ini. Setiap pertemuan telah diatur dengan indah, hanya menunggu waktu yang tepat untuk terjadi. Berawal dari sebuah perkenalan sederhana, tanpa banyak rencana atau harapan berlebihan, kami dipertemukan dalam cara yang tidak pernah kami duga sebelumnya.",
     storyJudul2: "Perjalanan Bersama",
@@ -140,11 +141,11 @@ const CONFIG = {
     storyJudul3: "Komitmen",
     storyTeks3: "Hingga akhirnya kami menyadari bahwa perjalanan ini bukan lagi tentang dua orang yang berjalan sendiri, melainkan tentang dua hati yang memilih untuk melangkah bersama. Dengan penuh rasa syukur dan keyakinan, kami memutuskan untuk mengikat janji suci dan memulai babak baru dalam kehidupan kami.",
 
-    // Gallery lama (3 foto grid)
+    // Gallery (3 foto grid)
     galeriFoto: [
-        "img/pria.jpg",
-        "img/wanita.jpg",
-        "img/pria.jpg"
+        "pria.jpg",
+        "wanita.jpg",
+        "pria.jpg"
     ],
 
     closingPria: "Herlangga",
@@ -203,7 +204,15 @@ setText("display-ayat-teks", CONFIG.ayatTeks);
 setText("display-ayat-sumber", CONFIG.ayatSumber);
 
 setText("display-tanggal-hero", CONFIG.tanggalTeks);
-setText("display-std-waktu-lengkap", `${CONFIG.tanggalTeks} | ${CONFIG.jamAcara}`);
+
+const waktuLengkapEl = document.getElementById("display-std-waktu-lengkap");
+if (waktuLengkapEl) {
+    if (CONFIG.jamAcara && CONFIG.jamAcara.trim()) {
+        waktuLengkapEl.innerText = `${CONFIG.tanggalTeks} | ${CONFIG.jamAcara}`;
+    } else {
+        waktuLengkapEl.remove();
+    }
+}
 
 setText("display-std-bulan", CONFIG.stdBulan);
 setText("display-std-tanggal", CONFIG.stdTanggal);
