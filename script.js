@@ -15,7 +15,7 @@ const CONFIG = {
 
     tanggalTeks: "Sabtu, 27 Maret 2027",
     jamAcara: "",
-    tanggalCountdown: "March 27, waktu 16:00:00",
+    tanggalCountdown: "March 27, 2027 16:00:00",
 
     stdBulan: "MARET",
     stdTanggal: "27",
@@ -31,8 +31,8 @@ const CONFIG = {
     detailAlamatLines: "Jl. K.H. Mas Mansyur No.47, Kb. Melati,\nKec. Tanah Abang, Kota Jakarta Pusat,\nDaerah Khusus Ibukota Jakarta 10230",
     linkMaps: "https://maps.app.goo.gl/vtc6LVVJoQGudwiw7",
 
-    // Sesuai file di repository root
-    urlMusik: "marry-your-daughter.mp3",
+    // Sesuai nama file di repository root
+    urlMusik: "lagu.mp3.mp3",
 
     // =========================================================
     // BACKGROUND BERLAPIS & BERTEKSTUR TIAP BAGIAN (TIDAK POLOS)
@@ -128,7 +128,7 @@ const CONFIG = {
     rek2Nama: "a.n Zalsa Nabila Putri",
 
     kadoPenerima: "Herlangga & Zalsa",
-    kadoAlamat: "Jl. kS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
+    kadoAlamat: "Jl. KS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
     kadoWA: "0895331933432",
 
     // Sesuai nama file di repository root
@@ -141,7 +141,6 @@ const CONFIG = {
     storyJudul3: "Komitmen",
     storyTeks3: "Hingga akhirnya kami menyadari bahwa perjalanan ini bukan lagi tentang dua orang yang berjalan sendiri, melainkan tentang dua hati yang memilih untuk melangkah bersama. Dengan penuh rasa syukur dan keyakinan, kami memutuskan untuk mengikat janji suci dan memulai babak baru dalam kehidupan kami.",
 
-    // Gallery (3 foto grid)
     galeriFoto: [
         "pria.jpg",
         "wanita.jpg",
@@ -182,7 +181,6 @@ function setSrc(id, value) {
     if (el && value) el.src = value;
 }
 
-// Nama tamu dari URL (?to=Nama+Tamu)
 (function applyGuestName() {
     const params = new URLSearchParams(window.location.search);
     const guest = params.get("to") || params.get("tamu");
@@ -191,7 +189,6 @@ function setSrc(id, value) {
     }
 })();
 
-// Isi data ke elemen HTML
 setText("display-nama-pasangan", CONFIG.namaPanggilan);
 setText("display-monogram-amplop", CONFIG.monogramAmplop);
 setText("display-footer-nama", CONFIG.namaFooter);
