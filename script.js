@@ -350,36 +350,49 @@ if (bukaBtn) {
 })();
 
 // ==========================================
-// SPARKLES DI SAVE THE DATE
+// SPARKLES DI SAVE THE DATE (LEBIH RAPIH & SEIMBANG)
 // ==========================================
 (function initSparkles() {
     const container = document.getElementById("std-sparkles");
     if (!container) return;
 
-    for (let i = 0; i < 20; i++) {
+    const starCoords = [
+        [6, 10], [18, 24], [11, 48], [22, 72], [8, 88],
+        [34, 8], [66, 9], [82, 16], [92, 34], [79, 52],
+        [91, 68], [84, 86], [28, 92], [72, 91], [44, 15],
+        [57, 14]
+    ];
+
+    const dotCoords = [
+        [13, 17], [25, 36], [9, 62], [19, 82], [38, 12],
+        [62, 12], [75, 25], [88, 46], [76, 76], [90, 82],
+        [32, 85], [68, 84], [16, 94], [85, 94]
+    ];
+
+    starCoords.forEach(([left, top], i) => {
         const star = document.createElement("span");
         star.className = "sparkle-star";
         star.textContent = "✦";
-        star.style.left = `${(i * 19 + 7) % 96}%`;
-        star.style.top = `${(i * 29 + 11) % 92}%`;
-        star.style.fontSize = `${0.68 + (i % 4) * 0.22}rem`;
-        star.style.setProperty("--dur", `${2 + (i % 5) * 0.45}s`);
-        star.style.setProperty("--delay", `${(i % 6) * 0.35}s`);
+        star.style.left = `${left}%`;
+        star.style.top = `${top}%`;
+        star.style.fontSize = `${0.68 + (i % 3) * 0.2}rem`;
+        star.style.setProperty("--dur", `${2.2 + (i % 4) * 0.45}s`);
+        star.style.setProperty("--delay", `${(i % 5) * 0.35}s`);
         container.appendChild(star);
-    }
+    });
 
-    for (let j = 0; j < 18; j++) {
+    dotCoords.forEach(([left, top], j) => {
         const dot = document.createElement("span");
         dot.className = "sparkle-dot";
-        const size = 4 + (j % 3) * 3;
+        const size = 4 + (j % 2) * 3;
         dot.style.width = `${size}px`;
         dot.style.height = `${size}px`;
-        dot.style.left = `${(j * 23 + 13) % 95}%`;
-        dot.style.top = `${(j * 31 + 6) % 90}%`;
-        dot.style.setProperty("--dur", `${2.2 + (j % 4) * 0.5}s`);
+        dot.style.left = `${left}%`;
+        dot.style.top = `${top}%`;
+        dot.style.setProperty("--dur", `${2.4 + (j % 4) * 0.5}s`);
         dot.style.setProperty("--delay", `${(j % 5) * 0.4}s`);
         container.appendChild(dot);
-    }
+    });
 })();
 
 // ==========================================
