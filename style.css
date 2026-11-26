@@ -2298,3 +2298,25 @@ footer h3 {
     white-space: nowrap !important;
   }
 }
+/* BIAR H & Z GAK KEPOTONG PAS BUKA TIRAI */
+.curtain-crest-badge{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  width: max-content !important;
+  max-width: 90vw !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.curtain-crest-badge span{
+  white-space: nowrap !important;
+  font-size: 34px !important;
+  line-height: 1 !important;
+}
+.curtain-crest-badge small{
+  white-space: nowrap !important;
+  letter-spacing: 3px !important;
+  font-size: 11px !important;
+}
