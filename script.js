@@ -15,7 +15,7 @@ const CONFIG = {
 
     tanggalTeks: "Sabtu, 27 Maret 2027",
     jamAcara: "",
-    tanggalCountdown: "March 27, 2027 16:00:00",
+    tanggalCountdown: "March 27, waktu 16:00:00",
 
     stdBulan: "MARET",
     stdTanggal: "27",
@@ -119,17 +119,17 @@ const CONFIG = {
         amplopPenutup: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 55%), linear-gradient(160deg, #fbf3e4 0%, #e1caa3 100%)'
     },
 
-    rek1Nomor: "1122334455",
+    rek1Nomor: "110293867",
     rek1Bank: "BCA",
     rek1Nama: "a.n Herlangga Aprilyansah",
 
-    rek2Nomor: "1122334455",
-    rek2Bank: "DANA",
+    rek2Nomor: "4183269335",
+    rek2Bank: "PERMATA BANK",
     rek2Nama: "a.n Zalsa Nabila Putri",
 
     kadoPenerima: "Herlangga & Zalsa",
-    kadoAlamat: "Jl. K.H. Mas Mansyur No.47, Tanah Abang, Jakarta Pusat",
-    kadoWA: "08xxxxxxxxxx",
+    kadoAlamat: "Jl. kS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
+    kadoWA: "0895331933432",
 
     // Sesuai nama file di repository root
     storyFoto1: "pria.jpg",
