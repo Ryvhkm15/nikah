@@ -135,7 +135,7 @@ const CONFIG = {
     kadoWA1: "0895331933432",
     kadoWA1Nama: "(a.n Zalsa)",
     kadoWA2: "081212798828",
-    kadoWA2Nama: " (a.n Herlangga)",
+    kadoWA2Nama: "(a.n Herlangga)",
 
     // Sesuai nama file di repository root
     storyFoto1: "pria.jpg",
@@ -176,6 +176,43 @@ function terapkanBackground() {
     if (bg.amplopPenutup) rootStyle.setProperty("--bg-amplop-penutup", bg.amplopPenutup);
 }
 terapkanBackground();
+
+// ==========================================
+// ANIMASI BUKA TIRAI (OPENING CURTAIN)
+// ==========================================
+(function initOpeningCurtain() {
+    const curtain = document.getElementById("opening-curtain");
+    if (!curtain) return;
+
+    const reduceMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+        curtain.classList.add("is-done");
+        return;
+    }
+
+    function finishCurtain() {
+        curtain.classList.add("is-done");
+    }
+
+    function startOpening() {
+        if (curtain.classList.contains("is-opening") || curtain.classList.contains("is-done")) return;
+        curtain.classList.add("is-opening");
+        setTimeout(finishCurtain, 1750);
+    }
+
+    curtain.addEventListener("click", startOpening);
+
+    if (document.readyState === "complete") {
+        requestAnimationFrame(() => requestAnimationFrame(startOpening));
+    } else {
+        window.addEventListener("load", () => {
+            requestAnimationFrame(() => requestAnimationFrame(startOpening));
+        });
+    }
+
+    setTimeout(finishCurtain, 2400);
+})();
 
 function setText(id, value) {
     const el = document.getElementById(id);
