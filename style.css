@@ -2123,3 +2123,87 @@ footer h3 {
 
     .anim-item { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
+/* =========================================================
+   PERAPIAN TATA LETAK KOTAK KADO FISIK & TOMBOL WA
+========================================================= */
+.physical-gift-box .physical-line {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    align-items: start;
+    gap: 6px 14px;
+    padding: 10px 0;
+    margin-bottom: 0;
+    border-bottom: 1px dashed rgba(217, 190, 140, 0.25);
+    line-height: 1.55;
+}
+
+.physical-gift-box .physical-line:last-of-type {
+    border-bottom: none;
+}
+
+.physical-gift-box .physical-line strong {
+    white-space: nowrap;
+    line-height: 1.45;
+}
+
+.physical-wa-row {
+    display: grid !important;
+    grid-template-columns: 128px 1fr;
+    align-items: start;
+    gap: 6px 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(217, 190, 140, 0.25);
+}
+
+.physical-wa-row > strong {
+    white-space: nowrap;
+    color: var(--gold-bright);
+    line-height: 1.45;
+}
+
+.physical-wa-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 0 !important;
+    font-size: 0.94rem;
+    color: #fbf4e6;
+    line-height: 1.45;
+}
+
+.physical-wa-numbers span,
+.physical-wa-numbers a {
+    display: block;
+}
+
+.wa-gift-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.wa-gift-actions .btn-wa-gift {
+    flex: 1 1 180px;
+    padding: 10px 16px;
+    text-align: center;
+    line-height: 1.35;
+}
+
+@media (max-width: 480px) {
+    .physical-gift-box .physical-line,
+    .physical-wa-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .wa-gift-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .wa-gift-actions .btn-wa-gift {
+        width: 100%;
+        flex: none;
+    }
+}
