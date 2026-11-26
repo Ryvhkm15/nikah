@@ -134,7 +134,7 @@ const CONFIG = {
     kadoAlamat: "Jl. KS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
     kadoWA1: "0895331933432",
     kadoWA1Nama: "(a.n Zalsa)",
-    kadoWA2: "081212708828",
+    kadoWA2: "081212798828",
     kadoWA2Nama: "(a.n Herlangga)",
 
     // Sesuai nama file di repository root
