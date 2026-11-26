@@ -116,7 +116,6 @@ const CONFIG = {
             'linear-gradient(180deg, #faf5ec 0%, #eee2cd 100%)'
         ].join(", "),
 
-        // Background amplop masing-masing
         amplopHero: 'radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.85) 0%, transparent 55%), linear-gradient(160deg, #fffaf0 0%, #ebd9b7 100%)',
         amplopAyat: 'radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.76) 0%, transparent 55%), linear-gradient(160deg, #fcf5e8 0%, #e4cfa9 100%)',
         amplopPenutup: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.76) 0%, transparent 55%), linear-gradient(160deg, #fbf3e4 0%, #e1caa3 100%)'
@@ -133,8 +132,8 @@ const CONFIG = {
     kadoPenerima: "Herlangga & Zalsa",
     kadoAlamat: "Jl. KS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
     kadoWA: "0895331933432",
+    kadoWA2: "081212708828",
 
-    // Sesuai nama file di repository root
     storyFoto1: "pria.jpg",
     storyFoto2: "wanita.jpg",
     storyJudul1: "Awal Pertemuan",
@@ -182,6 +181,12 @@ function setText(id, value) {
 function setSrc(id, value) {
     const el = document.getElementById(id);
     if (el && value) el.src = value;
+}
+
+function buildWaUrl(phone, text) {
+    const cleanPhone = String(phone || "").replace(/\D/g, "").replace(/^0/, "62");
+    if (!cleanPhone) return "#";
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
 }
 
 (function applyGuestName() {
@@ -244,12 +249,22 @@ setText("display-rek2-nama", CONFIG.rek2Nama);
 setText("display-kado-penerima", CONFIG.kadoPenerima);
 setText("display-kado-alamat", CONFIG.kadoAlamat);
 setText("display-kado-wa", CONFIG.kadoWA);
+setText("display-kado-wa-2", CONFIG.kadoWA2);
 
-const waGiftBtn = document.getElementById("btn-wa-kado");
-if (waGiftBtn && CONFIG.kadoWA) {
-    const cleanPhone = CONFIG.kadoWA.replace(/\D/g, "").replace(/^0/, "62");
-    const pesanWA = encodeURIComponent(`Halo ${CONFIG.kadoPenerima}, saya ingin konfirmasi pengiriman kado pernikahan.`);
-    waGiftBtn.href = `https://wa.me/${cleanPhone}?text=${pesanWA}`;
+const waGiftBtn1 = document.getElementById("btn-wa-kado");
+if (waGiftBtn1 && CONFIG.kadoWA) {
+    waGiftBtn1.href = buildWaUrl(
+        CONFIG.kadoWA,
+        `Halo Zalsa (${CONFIG.kadoPenerima}), saya ingin konfirmasi pengiriman kado pernikahan.`
+    );
+}
+
+const waGiftBtn2 = document.getElementById("btn-wa-kado-2");
+if (waGiftBtn2 && CONFIG.kadoWA2) {
+    waGiftBtn2.href = buildWaUrl(
+        CONFIG.kadoWA2,
+        `Halo Herlangga (${CONFIG.kadoPenerima}), saya ingin konfirmasi pengiriman kado pernikahan.`
+    );
 }
 
 setSrc("display-story-foto-1", CONFIG.storyFoto1);
@@ -356,7 +371,7 @@ if (closingEl) {
 })();
 
 // ==========================================
-// LIGHTBOX PREVIEW FOTO GALERI
+// LIGHTBOX PREVIEW FOTO GALERI & LOVE STORY
 // ==========================================
 (function initLightbox() {
     const lightbox = document.getElementById("photo-lightbox");
@@ -365,6 +380,7 @@ if (closingEl) {
     if (!lightbox || !lightboxImg || !closeBtn) return;
 
     function openLightbox(src, alt) {
+        if (!src) return;
         lightboxImg.src = src;
         lightboxImg.alt = alt || "Preview Foto Momen";
         lightbox.classList.add("is-open");
@@ -376,8 +392,8 @@ if (closingEl) {
         lightbox.setAttribute("aria-hidden", "true");
     }
 
-    document.querySelectorAll(".gallery-frame img").forEach((img) => {
-        img.addEventListener("click", () => openLightbox(img.src, img.alt));
+    document.querySelectorAll(".gallery-frame img, .polaroid-card img").forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img.currentSrc || img.src, img.alt));
     });
 
     closeBtn.addEventListener("click", closeLightbox);
@@ -401,8 +417,9 @@ if (audio && CONFIG.urlMusik) {
     const sourceEl = audio.querySelector("source");
     if (sourceEl) {
         sourceEl.src = CONFIG.urlMusik;
-        audio.load();
     }
+    audio.src = CONFIG.urlMusik;
+    audio.load();
 }
 
 function updateMusicButton() {
