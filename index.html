@@ -7,9 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261126e">
+    <link rel="stylesheet" href="style.css?v=20261126f">
 </head>
-<body>
+<body data-wedding-theme="emerald">
+
+    <!-- INDIKATOR PROGRES SCROLL -->
+    <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- THEME SWITCHER BERTEMA WEDDING -->
+    <div class="theme-switcher" role="group" aria-label="Pilih tema tampilan undangan">
+        <button type="button" class="theme-chip is-active" data-theme-option="emerald">Emerald</button>
+        <button type="button" class="theme-chip" data-theme-option="velvet">Velvet</button>
+        <button type="button" class="theme-chip" data-theme-option="botanical">Botanical</button>
+    </div>
 
     <!-- SAMPUL / COVER AMPLOP -->
     <section class="hero-envelope anim-section" id="cover">
@@ -169,6 +179,10 @@
                 <div><span id="seconds">00</span><small>Detik</small></div>
             </div>
 
+            <button type="button" id="btn-save-calendar" class="btn-calendar-outline">
+                <span>✦</span> Simpan ke Kalender (.ics)
+            </button>
+
             <div class="venue-illustration" aria-hidden="true">
                 <svg viewBox="0 0 560 155" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="25" y1="142" x2="535" y2="142" stroke="#d5dfd8" stroke-width="2" stroke-linecap="round"/>
@@ -296,6 +310,7 @@
                 <p class="physical-line"><strong>Penerima</strong> <span id="display-kado-penerima">Herlangga & Zalsa</span></p>
                 <p class="physical-line"><strong>Alamat</strong> <span id="display-kado-alamat">Jl. KS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat</span></p>
                 <p class="physical-line"><strong>Konfirmasi WA</strong> <span id="display-kado-wa">0895331933432</span></p>
+                <a id="btn-wa-kado" href="https://wa.me/62895331933432" target="_blank" rel="noopener noreferrer" class="btn-wa-gift">Konfirmasi via WhatsApp</a>
             </div>
         </div>
     </section>
@@ -364,6 +379,14 @@
         </div>
     </section>
 
+    <!-- LIGHTBOX PREVIEW FOTO -->
+    <div class="photo-lightbox" id="photo-lightbox" aria-hidden="true">
+        <div class="photo-lightbox-content">
+            <button type="button" class="photo-lightbox-close" id="photo-lightbox-close" aria-label="Tutup preview foto">✕</button>
+            <img id="photo-lightbox-img" src="" alt="Preview Foto Momen">
+        </div>
+    </div>
+
     <!-- KARTU PENUTUP AMPLOP MARUN -->
     <section class="section-closing-envelope anim-section" id="penutup">
         <div class="top-ornament-line light anim-item" aria-hidden="true"><span></span><i>✦</i><span></span></div>
@@ -420,6 +443,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20261126e"></script>
+    <script src="script.js?v=20261126f"></script>
 </body>
 </html>
