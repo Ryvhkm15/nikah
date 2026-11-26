@@ -1362,88 +1362,112 @@ body {
 }
 
 /* =========================================================
-   PERAPIAN TATA LETAK KOTAK KADO FISIK & TOMBOL WA
+   BAGIAN 5: WEDDING GIFT & KADO
 ========================================================= */
-.physical-gift-box .physical-line {
-    display: grid;
-    grid-template-columns: 128px 1fr;
-    align-items: start;
-    gap: 6px 14px;
-    padding: 10px 0;
-    margin-bottom: 0;
-    border-bottom: 1px dashed rgba(217, 190, 140, 0.25);
-    line-height: 1.55;
+.section-gift-maroon {
+    position: relative;
+    padding: 78px 20px 84px;
+    background: var(--bg-gift-section);
+    color: #fff8f2;
+    text-align: center;
+    overflow: hidden;
 }
 
-.physical-gift-box .physical-line:last-of-type {
-    border-bottom: none;
+.gift-maroon-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 460px;
+    margin: 0 auto;
 }
 
-.physical-gift-box .physical-line strong {
-    white-space: nowrap;
-    line-height: 1.45;
+.gift-script-heading {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: clamp(2.8rem, 8vw, 3.8rem);
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+    margin-bottom: 16px;
 }
 
-.physical-wa-row {
-    display: grid !important;
-    grid-template-columns: 128px 1fr;
-    align-items: start;
-    gap: 6px 14px;
-    padding: 10px 0;
-    border-bottom: 1px dashed rgba(217, 190, 140, 0.25);
+.gift-wrap-decor {
+    max-width: 112px;
+    margin: 0 auto 20px;
+    animation: floatGentle 3.3s ease-in-out infinite;
 }
 
-.physical-wa-row > strong {
-    white-space: nowrap;
-    color: var(--gold-bright);
-    line-height: 1.45;
-}
-
-.physical-wa-numbers {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding-left: 0 !important;
-    font-size: 0.94rem;
-    color: #fbf4e6;
-    line-height: 1.45;
-}
-
-.physical-wa-numbers span,
-.physical-wa-numbers a {
+.gift-wrap-decor svg {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
-.wa-gift-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
+.gift-maroon-text {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: #f8efe8;
+    margin-bottom: 18px;
 }
 
-.wa-gift-actions .btn-wa-gift {
-    flex: 1 1 180px;
-    padding: 10px 16px;
-    text-align: center;
-    line-height: 1.35;
+.rek-maroon-item {
+    margin: 26px 0 30px;
 }
 
-@media (max-width: 480px) {
-    .physical-gift-box .physical-line,
-    .physical-wa-row {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
+.rek-maroon-num {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
 
-    .wa-gift-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
+.rek-maroon-bank {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: #f4e6dc;
+    margin-bottom: 2px;
+}
 
-    .wa-gift-actions .btn-wa-gift {
-        width: 100%;
-        flex: none;
-    }
+.rek-maroon-holder {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: #f4e6dc;
+    margin-bottom: 14px;
+}
+
+.btn-olive-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: var(--olive-btn);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    padding: 7px 22px;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.18s ease;
+}
+
+.btn-olive-copy:hover {
+    background-color: var(--olive-btn-hover);
+    transform: translateY(-2px);
+}
+
+.btn-olive-copy.copied {
+    background-color: #2b7a4b;
+}
+
+.gift-closing-note {
+    margin-top: 28px;
+    margin-bottom: 16px;
 }
 
 /* =========================================================
