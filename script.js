@@ -130,9 +130,9 @@ const CONFIG = {
     rek2Nama: "a.n Zalsa Nabila Putri",
 
     kadoPenerima: "Herlangga & Zalsa",
-    kadoAlamat: "Jl. KS TUBUN IV Rt 04 Rw 07 No 31, Slipi Jakarta Barat",
+    kadoAlamat: "Jl. Ks Tubun IV Rt 04 Rw 07 No 31, Slipi, Jakarta Barat",
     kadoWA: "0895331933432",
-    kadoWA2: "081212708828",
+    kadoWA2: "081212798828",
 
     storyFoto1: "pria.jpg",
     storyFoto2: "wanita.jpg",
