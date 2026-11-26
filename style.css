@@ -848,11 +848,13 @@ body {
     position: relative;
     z-index: 2;
     margin-top: 16px;
+    padding: 0 14px;
     font-family: var(--font-sans);
-    font-size: 0.76rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.14em;
     color: #7c5d32;
+    text-align: center;
 }
 
 /* =========================================================
@@ -1096,7 +1098,7 @@ body {
 }
 
 /* =========================================================
-   KARTU COUNTDOWN LEBIH RAPIH & PRESISI (GAMBAR 2)
+   KARTU COUNTDOWN LEBIH RAPIH & PRESISI
 ========================================================= */
 .countdown {
     display: grid;
@@ -1352,50 +1354,108 @@ body {
 }
 
 /* =========================================================
-   KOTAK KADO FISIK RAPIH SEJAJAR (GAMBAR 1)
+   KOTAK KADO FISIK RAPIH & MENARIK
 ========================================================= */
 .physical-gift-box {
-    background: linear-gradient(165deg, rgba(255, 250, 240, 0.11) 0%, rgba(255, 250, 240, 0.05) 100%);
-    border: 1px solid rgba(217, 190, 140, 0.36);
-    border-radius: 14px;
+    position: relative;
+    background:
+        radial-gradient(circle at 92% 14%, rgba(245, 226, 186, 0.16) 0%, transparent 45%),
+        linear-gradient(165deg, rgba(255, 250, 240, 0.14) 0%, rgba(26, 4, 9, 0.34) 100%);
+    border: 1px solid rgba(217, 190, 140, 0.48);
+    border-radius: 16px;
     padding: 18px 20px;
     text-align: left;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 250, 235, 0.22);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 250, 235, 0.25);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease, box-shadow 0.32s ease;
+}
+
+.physical-gift-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 226, 186, 0.72);
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.4),
+        0 0 18px rgba(217, 190, 140, 0.14);
 }
 
 .physical-line {
     display: grid;
-    grid-template-columns: 112px minmax(0, 1fr);
-    align-items: start;
-    column-gap: 10px;
+    grid-template-columns: 118px minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed rgba(217, 190, 140, 0.22);
     font-family: var(--font-sans);
     font-size: 0.88rem;
-    line-height: 1.6;
+    line-height: 1.58;
     color: #f8efe8;
     margin-bottom: 0;
 }
 
+.physical-line:first-child {
+    padding-top: 2px;
+}
+
+.physical-line:last-child {
+    border-bottom: none;
+    padding-bottom: 2px;
+}
+
 .physical-line strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: var(--gold-bright);
+    font-size: 0.76rem;
     font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.physical-line strong::before {
+    content: "✦";
+    font-size: 0.65rem;
+    color: var(--gold-accent);
 }
 
 .physical-line span {
     overflow-wrap: anywhere;
-    color: #fff8f2;
+    color: #fffaf4;
+    font-weight: 400;
+}
+
+.physical-line:first-child span {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.physical-line:last-child span {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: #fff6e0;
 }
 
 @media (max-width: 420px) {
     .physical-gift-box {
-        padding: 16px;
+        padding: 15px 16px;
+        border-radius: 14px;
     }
 
     .physical-line {
-        grid-template-columns: 98px minmax(0, 1fr);
+        grid-template-columns: 104px minmax(0, 1fr);
+        column-gap: 10px;
         font-size: 0.84rem;
+    }
+
+    .physical-line strong {
+        font-size: 0.7rem;
     }
 }
 
