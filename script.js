@@ -16,6 +16,8 @@ const CONFIG = {
     tanggalTeks: "Sabtu, 27 Maret 2027",
     jamAcara: "",
     tanggalCountdown: "2027-03-27T16:00:00+07:00",
+    kalenderMulai: "20270327T090000Z", // 16:00 WIB
+    kalenderSelesai: "20270327T140000Z", // 21:00 WIB
 
     stdBulan: "MARET",
     stdTanggal: "27",
@@ -243,6 +245,13 @@ setText("display-kado-penerima", CONFIG.kadoPenerima);
 setText("display-kado-alamat", CONFIG.kadoAlamat);
 setText("display-kado-wa", CONFIG.kadoWA);
 
+const waGiftBtn = document.getElementById("btn-wa-kado");
+if (waGiftBtn && CONFIG.kadoWA) {
+    const cleanPhone = CONFIG.kadoWA.replace(/\D/g, "").replace(/^0/, "62");
+    const pesanWA = encodeURIComponent(`Halo ${CONFIG.kadoPenerima}, saya ingin konfirmasi pengiriman kado pernikahan.`);
+    waGiftBtn.href = `https://wa.me/${cleanPhone}?text=${pesanWA}`;
+}
+
 setSrc("display-story-foto-1", CONFIG.storyFoto1);
 setSrc("display-story-foto-2", CONFIG.storyFoto2);
 setText("display-story-judul-1", CONFIG.storyJudul1);
@@ -262,6 +271,123 @@ const closingEl = document.getElementById("display-closing-nama");
 if (closingEl) {
     closingEl.innerHTML = `<span>${CONFIG.closingPria}</span><span class="closing-amp">&</span><span>${CONFIG.closingWanita}</span>`;
 }
+
+// ==========================================
+// THEME SWITCHER & SCROLL PROGRESS BAR
+// ==========================================
+(function initThemeAndProgress() {
+    const THEME_KEY = "undangan_tema_herlangga_zalsa";
+    const allowedThemes = ["emerald", "velvet", "botanical"];
+    const chips = document.querySelectorAll("[data-theme-option]");
+
+    function applyTheme(themeName) {
+        const chosen = allowedThemes.includes(themeName) ? themeName : "emerald";
+        document.body.setAttribute("data-wedding-theme", chosen);
+        chips.forEach((chip) => {
+            chip.classList.toggle("is-active", chip.getAttribute("data-theme-option") === chosen);
+        });
+        try {
+            localStorage.setItem(THEME_KEY, chosen);
+        } catch {
+            // Abaikan jika storage tidak tersedia
+        }
+    }
+
+    let savedTheme = "emerald";
+    try {
+        savedTheme = localStorage.getItem(THEME_KEY) || "emerald";
+    } catch {
+        savedTheme = "emerald";
+    }
+    applyTheme(savedTheme);
+
+    chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+            applyTheme(chip.getAttribute("data-theme-option"));
+        });
+    });
+
+    const progressEl = document.getElementById("scroll-progress-bar");
+    if (progressEl) {
+        window.addEventListener(
+            "scroll",
+            () => {
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const pct = docHeight > 0 ? Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100)) : 0;
+                progressEl.style.width = `${pct}%`;
+            },
+            { passive: true }
+        );
+    }
+})();
+
+// ==========================================
+// SIMPAN KE KALENDER (.ICS)
+// ==========================================
+(function initCalendarDownload() {
+    const btn = document.getElementById("btn-save-calendar");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+        const icsContent = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Undangan Pernikahan//Herlangga & Zalsa//ID",
+            "BEGIN:VEVENT",
+            `DTSTART:${CONFIG.kalenderMulai}`,
+            `DTEND:${CONFIG.kalenderSelesai}`,
+            `SUMMARY:Pernikahan ${CONFIG.namaPanggilan}`,
+            `LOCATION:${CONFIG.namaLokasi} - ${CONFIG.alamatLengkap}`,
+            `DESCRIPTION:Akad (${CONFIG.detailJamAkad}) & Resepsi (${CONFIG.detailJamResepsi}) di ${CONFIG.namaLokasi}.`,
+            "END:VEVENT",
+            "END:VCALENDAR"
+        ].join("\r\n");
+
+        const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "Pernikahan-Herlangga-Zalsa.ics";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+})();
+
+// ==========================================
+// LIGHTBOX PREVIEW FOTO GALERI
+// ==========================================
+(function initLightbox() {
+    const lightbox = document.getElementById("photo-lightbox");
+    const lightboxImg = document.getElementById("photo-lightbox-img");
+    const closeBtn = document.getElementById("photo-lightbox-close");
+    if (!lightbox || !lightboxImg || !closeBtn) return;
+
+    function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "Preview Foto Momen";
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    document.querySelectorAll(".gallery-frame img").forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img.src, img.alt));
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+    });
+})();
 
 // ==========================================
 // AMPLOP BISA DIBUKA / DITUTUP + MUSIK
