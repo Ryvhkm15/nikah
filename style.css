@@ -163,6 +163,120 @@
 }
 
 /* =========================================================
+   ANIMASI BUKA TIRAI (OPENING CURTAIN) SAAT PERTAMA BUKA
+========================================================= */
+.opening-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 95;
+    display: flex;
+    pointer-events: auto;
+    transition: opacity 0.45s ease 1.15s, visibility 0.45s ease 1.15s;
+}
+
+.opening-curtain.is-done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.curtain-panel {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 244, 214, 0.06) 0px,
+            rgba(255, 244, 214, 0.06) 10px,
+            rgba(0, 0, 0, 0.22) 10px,
+            rgba(0, 0, 0, 0.22) 24px
+        ),
+        linear-gradient(180deg, #5d0e1d 0%, #3d0711 55%, #260309 100%);
+    border-bottom: 3px solid rgba(217, 190, 140, 0.75);
+    box-shadow: inset 0 0 48px rgba(0, 0, 0, 0.55);
+    transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.28s;
+    will-change: transform;
+}
+
+.curtain-panel-left {
+    border-right: 2px solid rgba(217, 190, 140, 0.85);
+}
+
+.curtain-panel-right {
+    border-left: 2px solid rgba(217, 190, 140, 0.85);
+}
+
+.curtain-gold-trim {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(180deg, #f5e2ba 0%, #c99f57 50%, #f5e2ba 100%);
+    opacity: 0.75;
+}
+
+.curtain-panel-left .curtain-gold-trim {
+    right: 6px;
+}
+
+.curtain-panel-right .curtain-gold-trim {
+    left: 6px;
+}
+
+.curtain-crest-badge {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 96;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fffaf0 0%, #e7d1a5 100%);
+    border: 2px solid #d9be8c;
+    color: #4e0d19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.12s, opacity 0.55s ease 0.12s;
+    pointer-events: none;
+}
+
+.curtain-crest-badge span {
+    font-family: var(--font-script);
+    font-size: 1.55rem;
+    line-height: 1;
+}
+
+.curtain-crest-badge small {
+    font-family: var(--font-sans);
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #7c5d32;
+    margin-top: 2px;
+}
+
+.opening-curtain.is-opening .curtain-panel-left,
+.opening-curtain.is-done .curtain-panel-left {
+    transform: translate3d(-102%, 0, 0);
+}
+
+.opening-curtain.is-opening .curtain-panel-right,
+.opening-curtain.is-done .curtain-panel-right {
+    transform: translate3d(102%, 0, 0);
+}
+
+.opening-curtain.is-opening .curtain-crest-badge,
+.opening-curtain.is-done .curtain-crest-badge {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+}
+
+/* =========================================================
    VARIASI TEMA WEDDING INSTAN (BISA DIGANTI LANGSUNG)
 ========================================================= */
 body[data-wedding-theme="velvet"] {
@@ -2122,4 +2236,5 @@ footer h3 {
     }
 
     .anim-item { opacity: 1 !important; transform: none !important; filter: none !important; }
+    .opening-curtain { display: none !important; }
 }
