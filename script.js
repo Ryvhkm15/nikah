@@ -15,7 +15,7 @@ const CONFIG = {
 
     tanggalTeks: "Sabtu, 27 Maret 2027",
     jamAcara: "",
-    tanggalCountdown: "March 27, 2027 16:00:00",
+    tanggalCountdown: "2027-03-27T16:00:00+07:00",
 
     stdBulan: "MARET",
     stdTanggal: "27",
@@ -39,84 +39,85 @@ const CONFIG = {
     // =========================================================
     backgrounds: {
         heroCover: [
-            'radial-gradient(ellipse 72% 48% at 50% 16%, rgba(245, 226, 186, 0.18) 0%, transparent 62%)',
-            'radial-gradient(circle at 16% 82%, rgba(217, 190, 140, 0.2) 0%, transparent 45%)',
-            'radial-gradient(circle at 86% 74%, rgba(24, 112, 74, 0.48) 0%, transparent 52%)',
-            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.035) 0px, rgba(217, 190, 140, 0.035) 1px, transparent 1px, transparent 18px)',
-            'linear-gradient(155deg, #041910 0%, #0b3624 48%, #04160e 100%)'
+            'radial-gradient(ellipse 76% 52% at 50% 14%, rgba(245, 226, 186, 0.24) 0%, transparent 64%)',
+            'radial-gradient(circle at 14% 84%, rgba(217, 190, 140, 0.24) 0%, transparent 48%)',
+            'radial-gradient(circle at 88% 72%, rgba(28, 132, 86, 0.54) 0%, transparent 55%)',
+            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.04) 0px, rgba(217, 190, 140, 0.04) 1px, transparent 1px, transparent 18px)',
+            'linear-gradient(155deg, #03150d 0%, #0b3a26 48%, #03130b 100%)'
         ].join(", "),
 
         ayatSection: [
-            'radial-gradient(circle at 50% 22%, rgba(217, 190, 140, 0.22) 0%, transparent 52%)',
-            'radial-gradient(circle at 12% 88%, rgba(78, 13, 25, 0.28) 0%, transparent 48%)',
-            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.04) 0px, rgba(217, 190, 140, 0.04) 2px, transparent 2px, transparent 16px)',
-            'repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.022) 0px, rgba(255, 255, 255, 0.022) 2px, transparent 2px, transparent 16px)',
-            'linear-gradient(175deg, #051f14 0%, #0d3b27 52%, #051a11 100%)'
+            'radial-gradient(circle at 50% 20%, rgba(245, 226, 186, 0.26) 0%, transparent 54%)',
+            'radial-gradient(circle at 12% 88%, rgba(112, 16, 35, 0.34) 0%, transparent 50%)',
+            'radial-gradient(circle at 90% 18%, rgba(24, 118, 76, 0.28) 0%, transparent 46%)',
+            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.045) 0px, rgba(217, 190, 140, 0.045) 2px, transparent 2px, transparent 16px)',
+            'repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 2px, transparent 2px, transparent 16px)',
+            'linear-gradient(175deg, #041b11 0%, #0d3e29 52%, #04170e 100%)'
         ].join(", "),
 
         mempelaiSection: [
-            'radial-gradient(ellipse 68% 45% at 50% 10%, rgba(245, 226, 186, 0.18) 0%, transparent 60%)',
-            'radial-gradient(circle at 85% 24%, rgba(217, 190, 140, 0.16) 0%, transparent 44%)',
-            'radial-gradient(circle at 18% 82%, rgba(158, 25, 52, 0.48) 0%, transparent 52%)',
-            'repeating-radial-gradient(circle at 50% 50%, rgba(255, 232, 188, 0.035) 0px, rgba(255, 232, 188, 0.035) 2px, transparent 2px, transparent 20px)',
-            'linear-gradient(165deg, #25040b 0%, #4d0c19 52%, #200309 100%)'
+            'radial-gradient(ellipse 72% 48% at 50% 10%, rgba(245, 226, 186, 0.22) 0%, transparent 62%)',
+            'radial-gradient(circle at 86% 24%, rgba(217, 190, 140, 0.19) 0%, transparent 46%)',
+            'radial-gradient(circle at 16% 84%, rgba(176, 28, 58, 0.52) 0%, transparent 54%)',
+            'repeating-radial-gradient(circle at 50% 50%, rgba(255, 232, 188, 0.04) 0px, rgba(255, 232, 188, 0.04) 2px, transparent 2px, transparent 20px)',
+            'linear-gradient(165deg, #210309 0%, #520d1b 52%, #1d0207 100%)'
         ].join(", "),
 
         acaraSection: [
-            'radial-gradient(circle at 14% 16%, rgba(217, 190, 140, 0.34) 0%, transparent 42%)',
-            'radial-gradient(circle at 88% 84%, rgba(13, 59, 40, 0.12) 0%, transparent 48%)',
-            'repeating-linear-gradient(-45deg, rgba(183, 148, 88, 0.05) 0px, rgba(183, 148, 88, 0.05) 1px, transparent 1px, transparent 16px)',
+            'radial-gradient(circle at 14% 16%, rgba(217, 190, 140, 0.36) 0%, transparent 44%)',
+            'radial-gradient(circle at 88% 84%, rgba(13, 59, 40, 0.14) 0%, transparent 50%)',
+            'repeating-linear-gradient(-45deg, rgba(183, 148, 88, 0.055) 0px, rgba(183, 148, 88, 0.055) 1px, transparent 1px, transparent 16px)',
             'linear-gradient(180deg, #fcf8f0 0%, #f3e8d4 55%, #eadcc3 100%)'
         ].join(", "),
 
         stdSection: [
-            'radial-gradient(ellipse 75% 42% at 50% 14%, rgba(255, 245, 208, 0.22) 0%, transparent 62%)',
-            'radial-gradient(circle at 14% 85%, rgba(13, 74, 48, 0.45) 0%, transparent 50%)',
-            'radial-gradient(circle at 88% 72%, rgba(217, 190, 140, 0.14) 0%, transparent 42%)',
-            'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 26px)',
-            'linear-gradient(175deg, #1d2d1d 0%, #314931 50%, #172417 100%)'
+            'radial-gradient(ellipse 78% 45% at 50% 12%, rgba(255, 245, 208, 0.26) 0%, transparent 64%)',
+            'radial-gradient(circle at 14% 85%, rgba(16, 86, 56, 0.5) 0%, transparent 52%)',
+            'radial-gradient(circle at 88% 70%, rgba(217, 190, 140, 0.18) 0%, transparent 44%)',
+            'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.028) 0px, rgba(255, 255, 255, 0.028) 1px, transparent 1px, transparent 26px)',
+            'linear-gradient(175deg, #182718 0%, #324c32 50%, #142014 100%)'
         ].join(", "),
 
         giftSection: [
-            'radial-gradient(ellipse 72% 44% at 50% 10%, rgba(245, 226, 186, 0.2) 0%, transparent 58%)',
-            'radial-gradient(circle at 15% 75%, rgba(217, 190, 140, 0.12) 0%, transparent 42%)',
-            'radial-gradient(circle at 82% 88%, rgba(22, 3, 8, 0.68) 0%, transparent 54%)',
-            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.032) 0px, rgba(217, 190, 140, 0.032) 1px, transparent 1px, transparent 18px)',
-            'linear-gradient(170deg, #32060f 0%, #570e1c 50%, #29040b 100%)'
+            'radial-gradient(ellipse 74% 46% at 50% 10%, rgba(245, 226, 186, 0.24) 0%, transparent 60%)',
+            'radial-gradient(circle at 15% 75%, rgba(217, 190, 140, 0.16) 0%, transparent 45%)',
+            'radial-gradient(circle at 82% 88%, rgba(22, 3, 8, 0.72) 0%, transparent 56%)',
+            'repeating-linear-gradient(45deg, rgba(217, 190, 140, 0.038) 0px, rgba(217, 190, 140, 0.038) 1px, transparent 1px, transparent 18px)',
+            'linear-gradient(170deg, #2d050d 0%, #5c0f1e 50%, #240309 100%)'
         ].join(", "),
 
         storySection: [
-            'radial-gradient(circle at 80% 20%, rgba(217, 190, 140, 0.18) 0%, transparent 46%)',
-            'radial-gradient(circle at 20% 80%, rgba(8, 34, 21, 0.52) 0%, transparent 50%)',
-            'repeating-linear-gradient(-45deg, rgba(255, 248, 224, 0.03) 0px, rgba(255, 248, 224, 0.03) 2px, transparent 2px, transparent 18px)',
-            'linear-gradient(180deg, #1b2b1b 0%, #2d422d 52%, #152215 100%)'
+            'radial-gradient(circle at 80% 20%, rgba(245, 226, 186, 0.22) 0%, transparent 48%)',
+            'radial-gradient(circle at 20% 80%, rgba(8, 38, 24, 0.56) 0%, transparent 52%)',
+            'repeating-linear-gradient(-45deg, rgba(255, 248, 224, 0.034) 0px, rgba(255, 248, 224, 0.034) 2px, transparent 2px, transparent 18px)',
+            'linear-gradient(180deg, #172517 0%, #2e452e 52%, #121d12 100%)'
         ].join(", "),
 
         galeriSection: [
-            'radial-gradient(ellipse 70% 38% at 50% 8%, rgba(217, 190, 140, 0.3) 0%, transparent 55%)',
-            'radial-gradient(circle at 88% 85%, rgba(78, 13, 25, 0.09) 0%, transparent 46%)',
-            'repeating-radial-gradient(circle at 20% 20%, rgba(183, 148, 88, 0.065) 0px, rgba(183, 148, 88, 0.065) 1.5px, transparent 1.5px, transparent 24px)',
-            'linear-gradient(180deg, #fefbf5 0%, #f5ebd8 55%, #ebe0ca 100%)'
+            'radial-gradient(ellipse 72% 40% at 50% 8%, rgba(217, 190, 140, 0.34) 0%, transparent 58%)',
+            'radial-gradient(circle at 88% 85%, rgba(92, 15, 30, 0.11) 0%, transparent 48%)',
+            'repeating-radial-gradient(circle at 20% 20%, rgba(183, 148, 88, 0.07) 0px, rgba(183, 148, 88, 0.07) 1.5px, transparent 1.5px, transparent 24px)',
+            'linear-gradient(180deg, #fefbf5 0%, #f5ebd8 55%, #e9dcc4 100%)'
         ].join(", "),
 
         penutupSection: [
-            'radial-gradient(ellipse 72% 45% at 50% 18%, rgba(245, 226, 186, 0.2) 0%, transparent 60%)',
-            'radial-gradient(circle at 85% 80%, rgba(96, 15, 30, 0.36) 0%, transparent 50%)',
-            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.035) 0px, rgba(217, 190, 140, 0.035) 1px, transparent 1px, transparent 16px)',
-            'linear-gradient(165deg, #051d12 0%, #0d3b27 52%, #04170e 100%)'
+            'radial-gradient(ellipse 76% 48% at 50% 18%, rgba(245, 226, 186, 0.24) 0%, transparent 62%)',
+            'radial-gradient(circle at 85% 80%, rgba(118, 18, 36, 0.42) 0%, transparent 52%)',
+            'repeating-linear-gradient(135deg, rgba(217, 190, 140, 0.04) 0px, rgba(217, 190, 140, 0.04) 1px, transparent 1px, transparent 16px)',
+            'linear-gradient(165deg, #041910 0%, #0d3e29 52%, #03130c 100%)'
         ].join(", "),
 
         ucapanSection: [
-            'radial-gradient(circle at 18% 16%, rgba(217, 190, 140, 0.26) 0%, transparent 44%)',
-            'radial-gradient(circle at 85% 85%, rgba(13, 59, 40, 0.12) 0%, transparent 48%)',
-            'repeating-linear-gradient(45deg, rgba(166, 128, 66, 0.04) 0px, rgba(166, 128, 66, 0.04) 1px, transparent 1px, transparent 14px)',
-            'linear-gradient(180deg, #faf5ec 0%, #efe4d1 100%)'
+            'radial-gradient(circle at 18% 16%, rgba(217, 190, 140, 0.28) 0%, transparent 46%)',
+            'radial-gradient(circle at 85% 85%, rgba(13, 59, 40, 0.14) 0%, transparent 50%)',
+            'repeating-linear-gradient(45deg, rgba(166, 128, 66, 0.045) 0px, rgba(166, 128, 66, 0.045) 1px, transparent 1px, transparent 14px)',
+            'linear-gradient(180deg, #faf5ec 0%, #eee2cd 100%)'
         ].join(", "),
 
         // Background amplop masing-masing
-        amplopHero: 'radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 55%), linear-gradient(160deg, #fffaf0 0%, #ebd9b7 100%)',
-        amplopAyat: 'radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.7) 0%, transparent 55%), linear-gradient(160deg, #fcf5e8 0%, #e4cfa9 100%)',
-        amplopPenutup: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 55%), linear-gradient(160deg, #fbf3e4 0%, #e1caa3 100%)'
+        amplopHero: 'radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.85) 0%, transparent 55%), linear-gradient(160deg, #fffaf0 0%, #ebd9b7 100%)',
+        amplopAyat: 'radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.76) 0%, transparent 55%), linear-gradient(160deg, #fcf5e8 0%, #e4cfa9 100%)',
+        amplopPenutup: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.76) 0%, transparent 55%), linear-gradient(160deg, #fbf3e4 0%, #e1caa3 100%)'
     },
 
     rek1Nomor: "110293867",
@@ -324,8 +325,11 @@ if (bukaBtn) {
     const targetTime = new Date(CONFIG.tanggalCountdown).getTime();
     if (Number.isNaN(targetTime)) return;
 
+    let timerId = null;
+
     function updateTimer() {
-        const diff = Math.max(0, targetTime - Date.now());
+        const rawDiff = targetTime - Date.now();
+        const diff = Math.max(0, rawDiff);
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
@@ -335,10 +339,14 @@ if (bukaBtn) {
         setText("hours", String(hours).padStart(2, "0"));
         setText("minutes", String(minutes).padStart(2, "0"));
         setText("seconds", String(seconds).padStart(2, "0"));
+
+        if (rawDiff <= 0 && timerId !== null) {
+            clearInterval(timerId);
+        }
     }
 
     updateTimer();
-    setInterval(updateTimer, 1000);
+    timerId = setInterval(updateTimer, 1000);
 })();
 
 // ==========================================
@@ -348,19 +356,19 @@ if (bukaBtn) {
     const container = document.getElementById("std-sparkles");
     if (!container) return;
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 20; i++) {
         const star = document.createElement("span");
         star.className = "sparkle-star";
         star.textContent = "✦";
         star.style.left = `${(i * 19 + 7) % 96}%`;
         star.style.top = `${(i * 29 + 11) % 92}%`;
-        star.style.fontSize = `${0.65 + (i % 4) * 0.22}rem`;
+        star.style.fontSize = `${0.68 + (i % 4) * 0.22}rem`;
         star.style.setProperty("--dur", `${2 + (i % 5) * 0.45}s`);
         star.style.setProperty("--delay", `${(i % 6) * 0.35}s`);
         container.appendChild(star);
     }
 
-    for (let j = 0; j < 16; j++) {
+    for (let j = 0; j < 18; j++) {
         const dot = document.createElement("span");
         dot.className = "sparkle-dot";
         const size = 4 + (j % 3) * 3;
@@ -379,6 +387,11 @@ if (bukaBtn) {
 // ==========================================
 function runTypewriter(el) {
     if (!el || el.dataset.typedDone === "true") return;
+    if (el.children.length > 0) {
+        el.dataset.typedDone = "true";
+        return;
+    }
+
     const fullText = el.textContent;
     if (!fullText || !fullText.trim()) return;
 
